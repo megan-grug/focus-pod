@@ -1,104 +1,224 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Focus Pod Productivity Dashboard
 
-Welcome USER_NAME,
+![examples of the project site shown on different sized screens](assets/img/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+This is a website for 
 
-## Gitpod Reminders
+It is a mobile first, responsive design and the live website can be viewed [here](https)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+An example of how the homepage looks on various screensizes is included above.
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+## USER EXPERIENCE:
 
-Another blue button should appear to click: _Open Browser_.
+### Who will use the website?
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+#### User 1 (A)
+**Goals:**
+- A
+- B; 
+- C
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## STRATEGY PLANE:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+**Project Purpose from the perspective of the site owners:**
 
-To log into the Heroku toolbelt CLI:
+- Goal:
+    - **Strategy:** I will do this by ensuring that information about booked gigs and details of how to buy tickets are easily available to fans visiting the site and that contact details for booking gigs are clear and visible for promoters looking to book the band for gigs. We will also use a newsletter sign up form to enable fans and potential new fans to be updated whenever new gigs are announced.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+-
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+**Viability of features:**
+| Feature                   | Importance  | Viability   |
+| --------------------------|------------ |-------------|
+| Gig calendar table        |     5       |     5       |
+| Information about the band|     5       |     5       |             |
+| Pictures of the band      |     5       |     5       |             |
+| Contact details           |     5       |     5       |
+| Newsletter signup form    |     5       |     4       |
+| Music streaming           |     5       |     3       |
+| Contact form              |     4       |     4       |
+| PDF Electronic Press Kit  |     4       |     3       |
+| Merch shop                |     2       |     1       |
+               
 
-------
 
-## Release History
+## SCOPE PLANE:
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+The website will include the following features: 
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## STRUCTURE PLANE:
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+The following pages will be included in the project:
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+**Changes from original plan:**
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## SKELETON PLANE
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+**Changes since planning stage:**
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## SURFACE PLANE
 
-------
+**Colour scheme:**
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+**Typography:**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
+**Themes:**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## TECHNOLOGIES USED
 
-**So….?**
+### Languages:
+-	HTML5
+-	CSS3
+-   JavaScript
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Frameworks, Libraries and Programs:
+-	**Bootstrap 5:**
+Used for consistent styling and responsiveness. 
 
-**Can I opt out?**
+-	**Google Fonts:**
+Used to import custom fonts IM Fell English SC and Special Elite as referred to above. 
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+-	**Font Awesome:**
+Used to import icons used as social media links in iconbar. 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+-	**Git:**
+Used for version control between GitPod and GitHub.
 
-**Anything more?**
+-	**GitHub:**
+Used to store and deploy the project. 
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+-	**Moqups:**
+Used to create initial wireframes as part of the planning and designing stage. 
 
----
+-   **Google Developer Tools:**
+Used to inspect each page of the site and to check each element and function at a granular level to ensure it is working as planned.
 
-Happy coding!
+
+
+## TESTING:
+
+### VALIDATOR SERVICES:
+- **W3C Markup Validator:**
+       
+
+- **W3C CSS Validator:**
+    
+
+- **Lighthouse:**
+    
+
+
+### MANUAL TESTING
+
+I have manually tested the site by: 
+
+- visiting each page;
+- methodically checking that it looks right at every size;
+- methodically checking that every feature works as intended at various sizes. 
+
+
+Manual testing was undertaken on the following browsers with no noticable differences:
+- Google Chrome;
+- Mozilla Firefox;
+- Microsoft Edge;
+- Opera;
+- Safari 
+
+
+**Bugs Identified in Manual Testing**
+
+
+
+
+### USER STORIES TESTING:
+
+
+
+**FUTURE PLANS**
+
+
+
+## DEPLOYMENT
+
+**GITHUB PAGES**
+
+The project was deployed to GitHub Pages as follows:
+
+- Log in to GitHub;
+
+- Navigate to the GitHub repository for this project;
+
+- Click 'Settings' in the repository;
+
+- Under 'Settings' select 'Git Hub Pages';
+
+- Under 'Source' select 'None' and then 'Master Branch'.
+
+- When the page refreshes, scroll down to 'Git Hub Pages' and find the published site. 
+
+
+*Forking the repository on GitHub*
+
+This will allow you to make changes to the project without affecting the original by making a copy of the project and working from that. 
+
+- Log in to GitHub;
+
+- Navigate to the GitHub repository for this project;
+
+- Click 'Settings' in the repository;
+
+- Under 'Settings' select 'Fork';
+
+- Under 'Source' select 'None' and then 'Master Branch'.
+
+- This will create a copy of the original project repository.
+
+
+*Cloning*
+
+- Log in to GitHub;
+
+- Navigate to the GitHub repository for this project;
+
+- In the repository, click 'Clone or download';
+
+- To use HTTPS, copy the link under 'Clone with HTTPS';
+
+- Open GitBash;
+
+- Change the working directory to the location where you want to put the cloned directory.
+
+- Type 'git clone' and then paste the link you copied from 'Clone with HTTPS'.
+
+- Press enter to complete the creation of the local clone. 
+
+
+## CREDITS
+
+**Code Credits**
+
+
+**Media Credits**
+
+Photographs:
+
+Content written by the developer.
+
+Music:  
+
+
+**Acknowledgements**
+

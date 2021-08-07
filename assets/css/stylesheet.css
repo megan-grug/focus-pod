@@ -1,0 +1,23 @@
+
+body{
+    background: url(../img/Llanrug.jpg);
+    background-size: cover;
+    color: black;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.content{
+    margin: 1.5rem;
+}
+
+.greybox{
+    background-color: rgba(60, 60, 60, 0.8);
+}
+
+#tabs{
+    color:black;
+}
