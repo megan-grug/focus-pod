@@ -7,71 +7,57 @@
     <title>Focus Pod</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="assets/css/stylesheet.css" rel="stylesheet" type="text/css"/>
+    <script src="https://kit.fontawesome.com/6f005b098f.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="JS/script.js"></script>
 </head>
 <body>
-    <div class="content">
-        <p>HELLO THIS IS A TEST</p>
-        <div>FLIP CLOCK</div>
-        <div>TO DO</div>
-        <div>URGENT BUTTON</div>
-        <div>POM BUTTON</div>
-        <div><table class="table table-bordered greybox">
-            <thead>
-                <ul class="nav nav-tabs greybox" id="tabs">
-                    <li class="nav-item">
-                    <a aria-current="page" href="#">Project 1</a>
-                    </li>
-                    <li class="nav-item">
-                    <a href="#">Project 2</a>
-                    </li>
-                    <li class="nav-item">
-                    <a href="#">Project 3</a>
-                    </li>
-                    <li class="nav-item">
-                    <a href="#" tabindex="-1">Project 4</a>
-                    </li>
-                </ul>
-            </thead>
-            <thead>
-            <tr>
-                <th scope="col">To Do</th>
-                <th scope="col">In Progress</th>
-                <th scope="col">Done</th>
-                <th scope="col">Issues</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">to do 1 
-                    <input type="checkbox" id="todo1" name="todo1" value="todo1">
-                </th>
-                <td>in prog 1<input type="checkbox" id="inprog1" name="inprog1" value="inprog1">
-                </td> 
-                <td>done 1 <input type="checkbox" id="done1" name="done1" value="done1">
-                </td>
-                <td>issue 1<input type="checkbox" id="issue1" name="issue1" value="issue1"></td>
-            </tr>
-            <tr>
-                <th scope="row">to do 2</th>
-                <td>in prog 2</td>
-                <td>done 2</td>
-                <td>issue 2</td>
-            </tr>
-            <tr>
-                <th scope="row">to do 3</th>
-                <td>in prog 3</td>
-                <td>done 3</td>
-                <td>issue 3</td>
-            </tr>
-            <tr>
-                <th scope = "row">to do 4</th>
-                <td>in prog 4</td>
-                <td>done 4</td>
-                <td>issue 4</td>
-            </tr>
-        </tbody>
-        </table></div>
-    </div>
+    
+
+        <div class="container">
+            <!--FIRST ROW-->
+            <div class="row">
+              <div class="col">
+                Column
+              </div>
+              <div class="col">
+                CLOCK
+              </div>
+              <div class="col">
+                Column
+              </div>
+            </div>
+            
+            <!--SECOND ROW-->
+            <div class="row">
+            <div class="col">
+                ROW 2Column
+              </div>
+              <div class="col">
+                <div class="todobox">
+                    <header>To Do List</header>
+                    <br>
+        
+                    <div>
+                        <input type="text" id="inputNew" placeholder="What do you need to do?">
+                        <button><i class="fas fa-plus" id="addBtn" onclick="addNew()"></i></button>
+                    </div>
+                    
+                    <ul id="todoList"></ul>
+                    
+        
+                    <div class="footer">
+                        <span>You have <span class="pendingTasks"></span> things to do</span>
+                        <button>Clear All</button>
+                    </div>
+                </div>
+              </div>
+              <div class="col">
+                ROW 2 Column
+              </div>
+            </div>
+        </div>
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>
