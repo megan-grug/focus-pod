@@ -5,6 +5,12 @@ a{
     color: inherit;
 }
 
+li{
+  line-height: 1.5;
+  list-style-type: none;
+  
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -96,6 +102,19 @@ body{
   padding: 0 15px;
   cursor: default;
   overflow: hidden;
+}
+
+.deleteBtn{
+  position:absolute;
+  right:auto;
+}
+
+button{
+  width: 25px;
+}
+
+li{
+  width: 200px;
 }
 
 .todoList li .icon{
