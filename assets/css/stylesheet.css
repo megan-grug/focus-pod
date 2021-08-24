@@ -20,10 +20,23 @@ li{
 }
 
 body{
-  background: url(../img/Llanrug.jpg);
+  background: url(../img/llanddwyn_day.jpg);
+
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
+
   color: black;
   padding: 10px;
+}
+
+.dark-mode {
+  background: url(../img/llanddwyn_night.jpg);
+
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  color: white;
 }
 
 .todobox{
@@ -115,6 +128,16 @@ button{
 
 li{
   width: 200px;
+}
+
+.completed{
+  text-decoration: line-through;
+  color:red;
+}
+
+.superbutton{
+  width:75px;
+  height: auto;
 }
 
 .todoList li .icon{
