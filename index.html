@@ -24,22 +24,20 @@
                 CLOCK
               </div>
               <div class="col">
-                Column
+                <div><img src="/assets/img/target.png" class="superbutton"></div>
               </div>
             </div>
             
             <!--SECOND ROW-->
             <div class="row">
             <div class="col">
-              <div><img src="/assets/img/moon.png" id="moon" class="superbutton" onclick="darkMode()"></button></div>
-              <div><img src="assets/img/sun.png" id="sun" class="superbutton"></div>
-              MOON ZONE
-              </div>
+              <div id="satellite" class="superbutton moon" onclick="darkMode()"></div>
+            </div>
               <div class="col">
                 <div class="todobox">
-                    <header class="completed">To Do List</header>
+                    <header>To Do List <i id="downarrow" class="fas fa-arrow-circle-down"></i></header>
                     <br>
-        
+                  <div class="main-todo">
                     <div>
                         <input type="text" id="inputBox" placeholder="What do you need to do?">
                         <button><i class="fas fa-plus" id="addBtn" onclick="addNew()"></i></button>
@@ -49,13 +47,15 @@
                     
         
                     <div class="footer">
-                        <span>You have <span class="pendingTasks"></span> things to do</span>
-                        <button>Clear All</button>
-                    </div>
+                        <div>You have <span class="pendingTasks"></span> things to do!</div><br>
+                        <br>
+                        
+                    </div><button id="give-up">Give Up</button>
                 </div>
               </div>
+              </div>
               <div class="col">
-                ROW 2 Column 2
+                
               </div>
             </div>
         </div>

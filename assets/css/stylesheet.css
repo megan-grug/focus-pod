@@ -1,16 +1,3 @@
-
-
-a{
-    text-decoration: none;
-    color: inherit;
-}
-
-li{
-  line-height: 1.5;
-  list-style-type: none;
-  
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -20,21 +7,40 @@ li{
 }
 
 body{
-  background: url(../img/llanddwyn_day.jpg);
-
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
+  background: url(../img/padarnday-dp.jpg);
   background-size: cover;
-
+  background-repeat: no-repeat; 
   color: black;
   padding: 10px;
 }
 
-.dark-mode {
-  background: url(../img/llanddwyn_night.jpg);
+li{
+  line-height: 1.5;
+  list-style-type: none;
+}
 
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
+img{
+  cursor:pointer;
+}
+
+button{
+  width: auto;
+  height: auto;
+  border: none;
+  color: #fff;
+  margin-left: 5px;
+  font-size: 20px;
+  outline: none;
+  background: #8E49E8;
+  cursor: pointer;
+  border-radius: 3px;
+  opacity: 0.6;
+}
+
+.dark-mode {
+  background: url(../img/padarnnight-pd.jpg);
+  background-position: center; 
+  background-repeat: no-repeat; 
   background-size: cover;
   color: white;
 }
@@ -43,7 +49,6 @@ body{
   background: rgba(119, 136, 153, 0.479);
   max-width: 400px;
   width: 100%;
-  /* margin: 120px auto;*/
   padding: 25px;
   border-radius: 5px;
   box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
@@ -55,54 +60,11 @@ body{
   text-align: center;
 }
 
-.todobox .inputField{
-  /*margin: 20px 0;*/
-  width: 100%;
-  display: flex;
-  height: 45px;
-}
-
-.inputField input{
-  width: 85%;
-  height: 100%;
-  outline: none;
-  /*border-radius: 3px;*/
-  border: 1px solid #ccc;
-  font-size: 17px;
-  *padding-left: 15px;*
-  transition: all 0.3s ease;
-}
-
-.inputField button{
-  width: 50px;
-  height: 100%;
-  border: none;
-  color: #fff;
-  margin-left: 5px;
-  font-size: 21px;
-  outline: none;
-  background: #8E49E8;
-  cursor: pointer;
-  border-radius: 3px;
-  opacity: 0.6;
-  pointer-events: none;
-  transition: all 0.3s ease;
-} 
-
-.inputField button:hover,
-.footer button:hover{
-  background: #721ce3;
-}
-
-.inputField button.active{
-  opacity: 1;
-  pointer-events: auto;
-}
-
+/*
 .todobox .todoList{
   max-height: 250px;
   overflow-y: auto;
-}
+}*/
 
 .todoList li{
   position: relative;
@@ -122,14 +84,6 @@ body{
   right:auto;
 }
 
-button{
-  width: 25px;
-}
-
-li{
-  width: 200px;
-}
-
 .completed{
   text-decoration: line-through;
   color:red;
@@ -138,53 +92,34 @@ li{
 .superbutton{
   width:75px;
   height: auto;
-}
-
-.todoList li .icon{
-  position: absolute;
-  right: -45px;
-  background: #e74c3c;
-  width: 45px;
-  text-align: center;
-  color: #fff;
-  border-radius: 0 3px 3px 0;
   cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.todoList li:hover .icon{
-  right: 0px;
 }
 
 .todobox .footer{
   display: flex;
+  line-height: 2.5;
   width: 100%;
   margin-top: 20px;
   align-items: center;
   justify-content: space-between;
 }
 
-.footer button{
-  padding: 6px 10px;
-  border-radius: 3px;
-  border: none;
-  outline: none;
-  color: #fff;
-  font-weight: 400;
-  font-size: 16px;
-  margin-left: 5px;
-  background: #8E49E8;
+#inputBox{
+  width: 200px;
+}
+
+#downarrow{
   cursor: pointer;
-  user-select: none;
-  opacity: 0.6;
-  pointer-events: none;
-  transition: all 0.3s ease;
 }
 
-.footer button.active{
-  opacity: 1;
-  pointer-events: auto;
+.moon{
+  content: url(../img/moon.png);
 }
 
+.sun{
+  content: url(../img/sun.png);
+}
 
-
+.main-todo{
+  display:none;
+}
