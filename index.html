@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="assets/css/stylesheet.css" rel="stylesheet" type="text/css"/>
     <script src="https://kit.fontawesome.com/6f005b098f.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="JS/script.js"></script>
 </head>
 <body>
@@ -37,7 +37,8 @@
                 <div class="todobox">
                     <header>To Do List <i id="downarrow" class="fas fa-arrow-circle-down"></i></header>
                     <br>
-                  <div class="main-todo">
+                  <div id="main-todo">
+                    
                     <div>
                         <input type="text" id="inputBox" placeholder="What do you need to do?">
                         <button><i class="fas fa-plus" id="addBtn" onclick="addNew()"></i></button>

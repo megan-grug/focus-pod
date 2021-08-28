@@ -38,7 +38,8 @@ tickBox.onclick = ()=>{
 
 
 //darkMode function from W3 Schools (https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp)
-function darkMode() {
+function darkMode() 
+{
   var element = document.body;
   element.classList.toggle("dark-mode");
 //code to swap moon and sun images my own
@@ -48,7 +49,11 @@ function darkMode() {
   else document.getElementById("satellite").className = "moon superbutton";
 };
 
-
-$("#downarrow").click(function(){
-  $("#main-todo").slideDown("fast");
-});
+//function to slide the to do list up and down
+$(document).ready(function()
+{
+  $("#downarrow").click(function()
+  {
+    $("#main-todo").slideToggle();
+  })
+})

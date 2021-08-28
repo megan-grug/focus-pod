@@ -119,7 +119,3 @@ button{
 .sun{
   content: url(../img/sun.png);
 }
-
-.main-todo{
-  display:none;
-}
