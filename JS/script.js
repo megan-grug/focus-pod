@@ -1,4 +1,3 @@
-
 let listOfThings = [];
 
 
@@ -30,8 +29,26 @@ function addNew()
     listOfThings.push(newListItem.innerHTML);
     console.log(listOfThings);
     inputBox.value          = " ";                                      //clears the input box
+    
     let pendingTasks        = document.getElementById('pendingTasks');
-    pendingTasks.innerHTML  = `<p>` + listOfThings.length + `</p>`;
+    
+    if (listOfThings.length > 1) 
+    
+
+    {
+      let thing = "things";    
+      pendingTasks.innerHTML  = `<p>` + listOfThings.length + `</p>`;
+      let thingSpan           = document.getElementById('thingSpan');
+      thingSpan.innerHTML     = `<p>` + thing + `</p>`;
+
+    } 
+    else if (listOfThings.length === 1)
+    {
+      let thing = "thing";
+      pendingTasks.innerHTML  = `<p>` + listOfThings.length + `</p>`;
+      let thingSpan           = document.getElementById('thingSpan');
+      thingSpan.innerHTML     = `<p>` + thing + `</p>`;
+    }
   }
 };
 
@@ -64,7 +81,6 @@ $(document).ready(function()
     $("#rainsounds").slideToggle();
   })
 })
-
 
 
 //function to delete task when bin icon is pressed - NOT WORKING
