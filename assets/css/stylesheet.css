@@ -112,6 +112,10 @@ button{
   cursor: pointer;
 }
 
+#rainsounds{
+  display: none;
+}
+
 .moon{
   content: url(../img/moon.png);
 }

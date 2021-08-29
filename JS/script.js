@@ -1,39 +1,48 @@
 
 let listOfThings = [];
 
-function addNew() {
-  let inputBox = document.getElementById('inputBox');
+//function to add the text from the input box to the todolist as a new todo item
+function addNew() 
+{ let inputBox = document.getElementById('inputBox');
   let todoList = document.getElementById('todoList');
   let newListItem = document.createElement("li");
-  
+  let pendingTasks = document.getElementById('pendingTasks');
   todoList.appendChild(newListItem);
-
-  let inputValue = document.getElementById('inputBox').value;
-
+  
   newListItem.innerHTML = `<p>`+ inputBox.value + `</p>` +
-  `<input class="form-check-input" type="checkbox" value="" aria-label="..."></input> 
+  `<input class="form-check-input" type="checkbox" value="" aria-label="..." onclick="completeTask"></input> 
   <button class="editBtn"><i class="fas fa-edit"></i></button>
   <button class="deleteBtn"><i class="fas fa-trash-alt"></i></button>`;
   listOfThings.push(newListItem.innerHTML);
   console.log(listOfThings);
   inputBox.value = " ";
+  pendingTasks.innerHTML = `<p>` + listOfThings.length `</p>`;
 };
 
-
-
+//function to strikethrough text in a todolist item when the corresponding tickbox is checked
+function completeTask()
+{
+  $(this).prev().addClass("completed");
+}
 let tickBox = document.getElementsByClassName("form-check-input");
-  console.log(tickBox);
+
+$(".form-check-input").click(function()
+{
+});
 
 
-tickBox.onclick = ()=>{
-  $.each(listOfThings, function(i,elem) {
+
+/*tickBox.onclick = ()=>
+{
+  $.each(listOfThings, function(i,elem) 
+  {
     $(elem).innerHTML = `<p class="completed">`+ inputBox.value + `</p>` +
     `<input class="form-check-input" type="checkbox" value="" aria-label="..."></input> 
     <button class="editBtn"><i class="fas fa-edit"></i></button>
     <button class="deleteBtn"><i class="fas fa-trash-alt"></i></button>`;
     console.log("something is happening");
   });
-};
+};*/
 
 
 
@@ -55,5 +64,14 @@ $(document).ready(function()
   $("#downarrow").click(function()
   {
     $("#main-todo").slideToggle();
+  })
+})
+
+//function to hide/reveal rainsounds player
+$(document).ready(function()
+{
+  $("#raincloud").click(function()
+  {
+    $("#rainsounds").slideToggle();
   })
 })
