@@ -1,6 +1,7 @@
 
 let listOfThings = [];
 
+
 //function to add the text from the input box to the todolist as a new todo item
 function addNew() 
 { let inputBox = document.getElementById('inputBox');
@@ -16,35 +17,8 @@ function addNew()
   listOfThings.push(newListItem.innerHTML);
   console.log(listOfThings);
   inputBox.value = " ";
-  pendingTasks.innerHTML = `<p>` + listOfThings.length `</p>`;
+  pendingTasks.innerHTML = `<p>` + listOfThings.length + `</p>`;
 };
-
-//function to strikethrough text in a todolist item when the corresponding tickbox is checked
-function completeTask()
-{
-  $(this).prev().addClass("completed");
-}
-let tickBox = document.getElementsByClassName("form-check-input");
-
-$(".form-check-input").click(function()
-{
-});
-
-
-
-/*tickBox.onclick = ()=>
-{
-  $.each(listOfThings, function(i,elem) 
-  {
-    $(elem).innerHTML = `<p class="completed">`+ inputBox.value + `</p>` +
-    `<input class="form-check-input" type="checkbox" value="" aria-label="..."></input> 
-    <button class="editBtn"><i class="fas fa-edit"></i></button>
-    <button class="deleteBtn"><i class="fas fa-trash-alt"></i></button>`;
-    console.log("something is happening");
-  });
-};*/
-
-
 
 //darkMode function from W3 Schools (https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp)
 function darkMode() 
@@ -75,3 +49,25 @@ $(document).ready(function()
     $("#rainsounds").slideToggle();
   })
 })
+
+
+
+//function to delete task when bin icon is pressed
+function deleteTask(e)
+{
+  const deleteBtn = document.querySelector(".deleteBtn");
+
+  deleteBtn.addEventListener("click", deleteTask);
+  const thisItem = e.target;
+  thisItem.remove;
+};
+
+
+function completeTask(e)
+{
+  const checkBox = document.querySelector(".form-check-input");
+
+  checkBox.addEventListener("click", completeTask);
+  const thisItem = e.target;
+  thisItem.classList.toggle(".completed");
+};
