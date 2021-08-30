@@ -34,14 +34,14 @@ function addNew()
     let pendingTasks        = document.getElementById('pendingTasks');
     
     if (listOfThings.length > 1) 
-    
+
     {
       let thing = "things";    
       pendingTasks.innerHTML  = `<p>` + listOfThings.length + `</p>`;
       let thingSpan           = document.getElementById('thingSpan');
       thingSpan.innerHTML     = `<p>` + thing + `</p>`;
+    }
 
-    } 
     else if (listOfThings.length === 1)
     {
       let thing = "thing";
@@ -87,7 +87,37 @@ $(document).ready(function()
 function deleteTask()
 {
   this.parentNode.parentNode.remove();
+  listOfThings.pop();
+  console.log(listOfThings);
+  
+  if (listOfThings.length > 1) 
+  {
+    let thing = "things";    
+    pendingTasks.innerHTML  = `<p>` + listOfThings.length + `</p>`;
+    let thingSpan           = document.getElementById('thingSpan');
+    thingSpan.innerHTML     = `<p>` + thing + `</p>`;
+  }
+
+  else if (listOfThings.length === 1)
+  {
+    let thing = "thing";
+    pendingTasks.innerHTML  = `<p>` + listOfThings.length + `</p>`;
+    let thingSpan           = document.getElementById('thingSpan');
+    thingSpan.innerHTML     = `<p>` + thing + `</p>`;
+  }
+
+  else if (listOfThings < 1)
+  {
+    let thing = "nothing";
+    pendingTasks.innerHTML  = " ";
+    let thingSpan           = document.getElementById('thingSpan');
+    thingSpan.innerHTML     = `<p>` + thing + `</p>`;
+  }
 };
+
+
+
+
 
 //function to add strikethrough styling if checkbox is ticked - TOGGLING CLASS WORKS, BUT STYLING DOES NOT APPLY
 
