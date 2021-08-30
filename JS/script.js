@@ -133,6 +133,6 @@ function giveUp()
     pendingTasks.innerHTML  = " ";
     let thingSpan           = document.getElementById('thingSpan');
     thingSpan.innerHTML     = `<p>` + thing + `</p>`;
-    alert("Congratulations! You have cast aside the capitalist notion that our worth is based on our productivity! Rejoice and embrace the simple joy of being.");
+    alert("Congratulations! You have cast aside the capitalist notion that our worth is based on our productivity!\n \nRejoice and embrace the simple joy of being. \n\n🧘");
   } 
 };
