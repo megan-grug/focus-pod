@@ -125,11 +125,14 @@ function completeTask()
 
 function giveUp()
 {
-  listOfThings.splice(0, listOfThings.length);
-  console.log(listOfThings);
-  let thing = "nothing";
-  pendingTasks.innerHTML  = " ";
-  let thingSpan           = document.getElementById('thingSpan');
-  thingSpan.innerHTML     = `<p>` + thing + `</p>`;
-  alert("Congratulations! You have cast aside the capitalist notion that our worth is based on our productivity! Rejoice and embrace the simple joy of being.");
+  if (listOfThings.length > 0)
+  {
+    listOfThings.splice(0, listOfThings.length);
+    console.log(listOfThings);
+    let thing               = "nothing";
+    pendingTasks.innerHTML  = " ";
+    let thingSpan           = document.getElementById('thingSpan');
+    thingSpan.innerHTML     = `<p>` + thing + `</p>`;
+    alert("Congratulations! You have cast aside the capitalist notion that our worth is based on our productivity! Rejoice and embrace the simple joy of being.");
+  } 
 };
