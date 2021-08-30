@@ -14,7 +14,8 @@ function addNew()
     todoList.appendChild(newListItem);                                  //puts the div into the todolist
     newListItem.appendChild(newTask);                                   //puts the li into the new task div
     newTask.innerHTML       = inputBox.value;                           //gives the li a value of whatever user typed in input
-  
+    newTask.classList.add("tasks");
+
     let deleteBtn           = document.createElement("button");         //creates button (to become deleteBtn)
     deleteBtn.innerHTML     = `<i class= "fas fa-trash-alt"></i>`;      //adds the icon making html to the button
     newTask.insertAdjacentElement('beforeend', deleteBtn);              //places the deleteBtn inside the li
