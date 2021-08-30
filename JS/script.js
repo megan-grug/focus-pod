@@ -115,15 +115,21 @@ function deleteTask()
   }
 };
 
-
-
-
-
-//function to add strikethrough styling if checkbox is ticked - TOGGLING CLASS WORKS, BUT STYLING DOES NOT APPLY
-
+//function to add strikethrough styling if checkbox is ticked
 function completeTask()
 {
   this.parentNode.classList.toggle("completed");
 };
 
-//function to create a clock
+//function for 'give up' button
+
+function giveUp()
+{
+  listOfThings.splice(0, listOfThings.length);
+  console.log(listOfThings);
+  let thing = "nothing";
+  pendingTasks.innerHTML  = " ";
+  let thingSpan           = document.getElementById('thingSpan');
+  thingSpan.innerHTML     = `<p>` + thing + `</p>`;
+  alert("Congratulations! You have cast aside the capitalist notion that our worth is based on our productivity! Rejoice and embrace the simple joy of being.");
+};
