@@ -1,10 +1,9 @@
 let listOfThings = [];
 
-
 //function to add the text from the input box to the todolist as a new todo item
 function addNew() 
 { 
-  let inputBox            = document.getElementById('inputBox');
+  let inputBox              = document.getElementById('inputBox');
   if (inputBox.value !== " ") 
   {
     
@@ -25,7 +24,9 @@ function addNew()
     let checkBox = document.createElement("button");                    //creates button (to become deleteBtn)
     checkBox.innerHTML      = `<i class = "fas fa-check"></i>`;         //adds the icon making html to the button
     newTask.insertAdjacentElement('beforeend', checkBox);               //places the checkBox inside the li
-
+    checkBox.classList.add(".checkBox");
+    checkBox.addEventListener("click", completeTask);
+    
     listOfThings.push(newListItem.innerHTML);
     console.log(listOfThings);
     inputBox.value          = " ";                                      //clears the input box
@@ -34,7 +35,6 @@ function addNew()
     
     if (listOfThings.length > 1) 
     
-
     {
       let thing = "things";    
       pendingTasks.innerHTML  = `<p>` + listOfThings.length + `</p>`;
@@ -83,18 +83,17 @@ $(document).ready(function()
 })
 
 
-//function to delete task when bin icon is pressed - NOT WORKING
+//function to delete task when bin icon is pressed - WORKING
 function deleteTask()
 {
-  deleteBtn.classList.add("completed");
+  this.parentNode.parentNode.remove();
 };
 
-//function to add strikethrough styling if checkbox is ticked - NOT WORKING
-function completeTask(e)
+//function to add strikethrough styling if checkbox is ticked - TOGGLING CLASS WORKS, BUT STYLING DOES NOT APPLY
+
+function completeTask()
 {
-  const checkBox = document.querySelector(".form-check-input");
-
-  checkBox.addEventListener("click", completeTask);
-  const thisItem = e.target;
-  thisItem.classList.toggle(".completed");
+  this.parentNode.classList.toggle("completed");
 };
+
+//function to create a clock

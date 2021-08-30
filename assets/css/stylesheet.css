@@ -60,11 +60,11 @@ button{
   text-align: center;
 }
 
-/*
+
 .todobox .todoList{
   max-height: 250px;
   overflow-y: auto;
-}*/
+}
 
 .todoList li{
   position: relative;
@@ -84,8 +84,9 @@ button{
   right:auto;
 }
 
-.completed{
-  text-decoration: line-through;
+.completed
+{
+  text-decoration: line-through !important;
   color:red;
 }
 
