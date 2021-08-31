@@ -137,3 +137,11 @@ function giveUp()
     alert("Congratulations! You have cast aside the capitalist notion that our worth is based on our productivity!\n \nRejoice and embrace the simple joy of being. \n\n🧘");
   } 
 };
+//function for clock - WORKING
+// CODE FROM https://dev.to/ahmadullahnikzad/how-to-create-digital-clock-in-vanilla-js-2172
+setInterval(showTime,1000);
+function showTime(){
+let date    = new Date();
+let time    = date.toLocaleTimeString();
+document.querySelector('.time').innerHTML=time;
+}

@@ -93,6 +93,11 @@ i{
   color:red;
 }
 
+.clock{
+  text-align: center;
+}
+
+
 .superbutton{
   width:75px;
   height: auto;
