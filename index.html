@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A free online productivity dashboard providing to do list and tools to help you focus">
     <title>Focus Pod</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="assets/css/stylesheet.css" rel="stylesheet" type="text/css"/>
@@ -16,41 +17,42 @@
   <!--FIRST ROW-->
     <div class="row">
       <div class="col">
-         <div><img src="/assets/img/tomato.png" class="superbutton"></div>
+         <div><img src="/assets/img/tomato.png" role="button" class="superbutton" alt = "tomato image - click to access pomodoro timer"></div> 
       </div>
       <div class="col clock">
         <h1 class="time">CLOCK</h1>
+        <div id="quotes"></div>
       </div>
       <div class="col">
-        <div><img src="/assets/img/target.png" class="superbutton float-end"></div>
+        <div><img src="/assets/img/target.png" role="button" class="superbutton float-end" alt = "archery target board image - click to access focus mode"></div>
       </div>
     </div>
             
     <!--SECOND ROW-->
     <div class="row">
       <div class="col">
-        <div id="satellite" class="superbutton moon" onclick="darkMode()"></div>
+        <div id="satellite" class="superbutton moon" aria-pressed="false" role="button" alt= "moon image - click to toggle dark mode" onclick="darkMode()"></div>
       </div>
       <div class="col">
         <div class="todobox">
-          <header>To Do List <i id="downarrow" class="fas fa-arrow-circle-down"></i></header>
+          <header>To Do List <i id="downarrow" class="fas fa-arrow-circle-down" alt="arrow image - click to expand and contract to do list"></i></header>
           <br>
           <div id="main-todo">        
             <div>
             <input type="text" id="inputBox" placeholder="What do you need to do?">
-            <button><i class="fas fa-plus" id="addBtn" onclick="addNew()"></i></button>
+            <button alt="plus symbol - click to add task to to do list"><i class="fas fa-plus" id="addBtn"  onclick="addNew()"></i></button>
             </div> 
             <ul id="todoList"></ul>
             <div class="footer">
-              <div>You have <span id="pendingTasks"></span> <span id="thingSpan">nothing</span> to do!</div>
-              <button id="give-up" onclick="giveUp()"> Give Up </button>
+              <div>You have <div id="pendingTasks"></div> <div id="thingSpan">nothing</div> to do!</div>
+              <button id="give-up" onclick="giveUp()" aria-label="'give up' button - click to delete all tasks"> Give Up </button>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
-        <div><img src="/assets/img/raincloud.png" class="superbutton float-end align-bottom" id="raincloud"></div>
-        <div id="rainsounds"><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8ymr6UES7vc" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
+        <div><img src="/assets/img/raincloud.png" role="button" aria-expanded="false" class="superbutton float-end align-bottom" id="raincloud" alt= "raincloud button to show and hide rain sounds player"></div>
+        <div id="rainsounds"><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8ymr6UES7vc" aria-label = "Spotify player for a playlist of rain sounds" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
       </div>
     </div>
   </div>

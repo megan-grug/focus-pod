@@ -131,8 +131,13 @@ i{
   display: none;
 }
 
+#raincloud{
+  margin-top: 90%;
+}
+
 .moon{
   content: url(../img/moon.png);
+  margin-top: 90%;
 }
 
 .sun{

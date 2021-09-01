@@ -145,3 +145,48 @@ let date    = new Date();
 let time    = date.toLocaleTimeString();
 document.querySelector('.time').innerHTML=time;
 }
+
+//function for time quote generator
+const quotesArr = 
+["'Time is free, but it’s priceless. You can’t own it, but you can use it. You can’t keep it, but you can spend it. Once you’ve lost it you can never get it back.' Harvey Mackay",
+"'The trouble is, you think you have time.' Jack Kornfield",
+"'Time is a cruel thief to rob us of our former selves. We lose as much to life as we do to death.' Elizabeth Forsythe Hailey",
+"'Suspect each moment, for it is a thief, tiptoeing away with more than it brings.' John Updike",
+"'Men talk of killing time, while time quietly kills them.' Dion Boucicault",
+"'There is one kind of robber whom the law does not strike at, and who steals what is most precious to men: time.' Napoleon I",
+"'The future is uncertain but the end is always near.' Jim Morrison",
+"'Time takes it all, whether you want it to or not.' Stephen King, The Green Mile",
+"'Time is a storm in which we are all lost.' William Carlos Williams",
+"'Time flies over us, but leaves its shadow behind.' Nathaniel Hawthorne",
+"'You can’t have a better tomorrow if you are thinking about yesterday all the time.' Charles F. Kettering",
+"'Regret for wasted time is more wasted time.' Mason Cooley",
+"'You can’t make up for lost time. You can only do better in the future.' Ashley Ormon",
+"'How did it get so late so soon? It’s night before it’s afternoon. December is here before it’s June. My goodness how the time has flewn. How did it get so late so soon? Dr. Seuss",
+"'If you love life, don’t waste time, for time is what life is made up of.' Bruce Lee",
+"'Time is what we want most, but what we use worst.' William Penn",
+"'The way we spend our time defines who we are.' Jonathan Estrin",
+"'Time slips away like grains of sand never to return again.' Robin Sharma",
+"'A man who dares to waste one hour of time has not discovered the value of life.' Charles Darwin",
+"'The time I kill is killing me.' Mason Cooley",
+"'Those who make the worst use of their time are the first to complain of its brevity.' Jean De La Bruyere",
+"'Determine never to be idle. No person will have occasion to complain of the want of time who never loses any. It is wonderful how much can be done if we are always doing.' Thomas Jefferson",
+"'There’s never enough time to do all the nothing you want.' Bill Watterson",
+"'It’s not that we have little time, but more that we waste a good deal of it.' Seneca",
+"'The passing of time and all of its sickening crimes is making me sad again.' The Smiths, Rubber Ring",
+"'Time is going to take so much away, but there's a way that you can offer time a trade. You gotta do something that you can get nicer at. You gotta do something that you can get wiser at. You better do something that you can get better at. 'Cause that's the only thing that time will leave you with.' Jeffrey Lewis, Time Trades",
+"'Your time is limited, so don’t waste it living someone else’s life.' Steve Jobs",
+"'Change your 24 hours and you will change your life.' Eric Thomas",
+"'They always say time changes things, but you actually have to change them yourself.' Andy Warhol",
+"'All we have to decide is what to do with the time that is given us.' J. R. R. Tolkien",
+"'The time for action is now. It’s never too late to do something.' Antoine de Saint-Exupery"
+]
+
+
+console.log(typeof(quotesArr));
+function chooseQuote()
+
+{ console.log(quotesArr.length);
+  let quoteDiv = document.getElementById("quotes");
+  let quoteNumber = getDate();
+  quoteDiv.innerHTML = quotesArr[quoteNumber];
+}
