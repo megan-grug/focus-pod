@@ -51,6 +51,10 @@ function addNew()
       thingSpan.innerHTML     = `<p>` + thing + `</p>`;
     }
   }
+  else
+  {
+    alert("You don't appear to have typed in a task, you cannot add an empty item to your list.");
+  }
 };
 
 //darkMode function from W3 Schools (https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp)
@@ -183,10 +187,15 @@ const quotesArr =
 
 
 console.log(typeof(quotesArr));
-function chooseQuote()
 
-{ console.log(quotesArr.length);
-  let quoteDiv = document.getElementById("quotes");
-  let quoteNumber = getDate();
+function chooseQuote()
+{ 
+  console.log(quotesArr.length);
+  const quoteDiv = document.getElementById("quotes");
+  const quoteNumber = new Date();
   quoteDiv.innerHTML = quotesArr[quoteNumber];
-}
+};
+
+new Date();
+console.log(new Date());
+chooseQuote();

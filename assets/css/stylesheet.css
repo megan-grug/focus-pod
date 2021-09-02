@@ -6,12 +6,18 @@
   font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
+html { 
+  
+}
+
 body{
-  background: url(../img/padarnday-dp.jpg);
-  background-size: cover;
-  background-repeat: no-repeat; 
   color: black;
   padding: 10px;
+  background: url(../img/dayforest.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 ul{
@@ -59,11 +65,19 @@ i{
 }
 
 .dark-mode {
-  background: url(../img/padarnnight-pd.jpg);
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-size: cover;
+  background: url(../img/nightforest3.jpg); 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
   color: white;
+}
+
+.dark-mode.todobox{
+  background:rgba(9, 37, 65, 0.7);
 }
 
 .todobox{
@@ -98,7 +112,7 @@ i{
 }
 
 .superbutton{
-  width:75px;
+  width:50%;
   height: auto;
   cursor: pointer;
 }
@@ -142,5 +156,6 @@ i{
 
 .sun{
   content: url(../img/sun.png);
+  margin-top: 90%;
 }
 

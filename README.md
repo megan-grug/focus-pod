@@ -2,9 +2,9 @@
 
 ![examples of the project site shown on different sized screens](assets/img/)
 
-This is a website for 
+This is a website to provide users with a number of useful productivity tools on one page. 
 
-It is a mobile first, responsive design and the live website can be viewed [here](https)
+It is a mobile first, responsive design and the live website can be viewed [here](https).
 
 An example of how the homepage looks on various screensizes is included above.
 
@@ -12,35 +12,55 @@ An example of how the homepage looks on various screensizes is included above.
 ## USER EXPERIENCE:
 
 ### Who will use the website?
+The site will be used by anyone who is looking for a system to support their productivity and help them to keep track of tasks that need to be done. 
 
-#### User 1 (A)
+
+#### Students (A)
 **Goals:**
-- A
-- B; 
-- C
+- Create and keep track of to do list;
+- Stay focused on the tasks at hand;
+- Keep track of time;
+- More likely to be working from a variety of places: classrooms, library, at home, and therefore likely to benefit from the ability to access the site on a mobile device. 
+- Users of the site are likely to be very busy individuals and therefore it is important that the site is user friendly and intuitive and that it isn't going to take a long time to understand how it works. 
 
+#### Professionals (B)
+**Goals:**
+- Create and keep track of to do list;
+- Stay focused on the tasks at hand;
+- Keep track of time;
+- More likely to be working from a desktop or laptop computer alongside other windows and likely to benefit from being able to resize the browser window to fit in alongside other work. 
+- If working in the office around colleagues it is important that the site is clearly work based. 
 
 ## STRATEGY PLANE:
 
 **Project Purpose from the perspective of the site owners:**
 
-- Goal:
-    - **Strategy:** I will do this by ensuring that information about booked gigs and details of how to buy tickets are easily available to fans visiting the site and that contact details for booking gigs are clear and visible for promoters looking to book the band for gigs. We will also use a newsletter sign up form to enable fans and potential new fans to be updated whenever new gigs are announced.
+- Provide a one stop productivity dashboard. 
 
--
+    - **Strategy:** I will do this by keeping the main content of the site to one page to avoid distraction from navigating around the site. The to do list feature will be prominently displayed on the main page so that users can always see the tasks they are working on.  
+
+
+- Provide additional tools to help with focusing. 
+
+    - **Strategy:** I will do this by providing additional features on the same main page, and designing the page so that these features are accessed by clicking on neat minimalist icons. This will help to provide rich functionality without the visual impact of the page being cluttered or distracting. 
+
+- Create a calm visual environment
+
+    - **Strategy:** I will create a calming visual environment by using high resolution images from nature as the background images for the site. There will be an option to toggle on 'dark mode' by 
+
 
 **Viability of features:**
-| Feature                   | Importance  | Viability   |
-| --------------------------|------------ |-------------|
-| Gig calendar table        |     5       |     5       |
-| Information about the band|     5       |     5       |             |
-| Pictures of the band      |     5       |     5       |             |
-| Contact details           |     5       |     5       |
-| Newsletter signup form    |     5       |     4       |
-| Music streaming           |     5       |     3       |
-| Contact form              |     4       |     4       |
+| Feature                               | Importance  | Viability   |
+| --------------------------------------|------------ |-------------|
+| Ability to add items to a to do list  |     5       |     5       |
+| Ability to check off done items       |     5       |     5       |             |
+| Ability to delete to do items         |     5       |     5       |             |
+| Rain noise music player               |     5       |     5       |
+| Dark mode option                      |     5       |     4       |
+| Clock                                 |     5       |     3       |
+| Pomodoro timer                        |     4       |     4       |
 | PDF Electronic Press Kit  |     4       |     3       |
-| Merch shop                |     2       |     1       |
+| Focus mode with a website blocker     |     2       |     1       |
                
 
 
