@@ -134,6 +134,10 @@ function giveUp()
   {
     listOfThings.splice(0, listOfThings.length);
     console.log(listOfThings);
+    Array.prototype.slice.call(document.getElementsByTagName('li')).forEach(
+      function(item) {
+        item.remove();
+        });
     let thing               = "nothing";
     pendingTasks.innerHTML  = " ";
     let thingSpan           = document.getElementById('thingSpan');
@@ -199,3 +203,6 @@ function chooseQuote()
 new Date();
 console.log(new Date());
 chooseQuote();
+  
+////////////////////////////////////
+
