@@ -132,12 +132,14 @@ function giveUp()
 {
   if (listOfThings.length > 0)
   {
+    ///////- code from Stack Overflow
     listOfThings.splice(0, listOfThings.length);
     console.log(listOfThings);
     Array.prototype.slice.call(document.getElementsByTagName('li')).forEach(
       function(item) {
         item.remove();
         });
+    //////////////////////// - end code from Stack Overflow
     let thing               = "nothing";
     pendingTasks.innerHTML  = " ";
     let thingSpan           = document.getElementById('thingSpan');
@@ -189,20 +191,19 @@ const quotesArr =
 "'The time for action is now. It’s never too late to do something.' Antoine de Saint-Exupery"
 ]
 
-
+/*
 console.log(typeof(quotesArr));
 
 function chooseQuote()
 { 
   console.log(quotesArr.length);
-  const quoteDiv = document.getElementById("quotes");
   const quoteNumber = new Date();
-  quoteDiv.innerHTML = quotesArr[quoteNumber];
-};
+  document.getElementById("quotes").innerHTML = quotesArr[quoteNumber];
+  };
 
-new Date();
-console.log(new Date());
+console.log("quoteNumber");
 chooseQuote();
+*/
   
 ////////////////////////////////////
 

@@ -233,6 +233,10 @@ This will allow you to make changes to the project without affecting the origina
 
 **Media Credits**
 
+Favicon:    
+The emoji graphic 'Hourglass Not Done' is from the open source project Twemoji. The graphics are copyright 2020 Twitter, Inc and other contributors. The graphics are licensed under CC-BY 4.0.
+The various sizes of Favicon were produced and downloaded at favicon.io.
+
 Photographs:
 
 Content written by the developer.
