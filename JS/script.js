@@ -88,6 +88,15 @@ $(document).ready(function()
   });
 });
 
+//function to hide/reveal gratitude list
+$(document).ready(function()
+{
+  $("#heart").click(function()
+  {
+    $("#gratitude").slideToggle();
+  });
+});
+
 
 //function to delete task when bin icon is pressed - WORKING
 function deleteTask()
@@ -105,7 +114,8 @@ function deleteTask()
 function completeTask()
 {
   this.parentNode.classList.toggle("completed");
-  if($('.div .li.completed').length === $('.ul .div').length)
+
+  if($('.li.completed').length === $('.ul .div').length)
   {
     pendingTasks.innerHTML  = " ";
     let thingSpan           = document.getElementById('thingSpan');
@@ -184,19 +194,18 @@ const quotesArr =
 ];
 
 
-console.log(typeof(quotesArr));
-
-document.getElementById("quotes").innerHTML = quotesArr[10];
 
 
-function chooseQuote()
+window.onload = function chooseQuote()
 { 
   console.log(quotesArr.length);
-  let quoteNumber = getDay();
+
+  let now = new Date();
+  let quoteNumber = now.getDate();
+
   document.getElementById("quotes").innerHTML = quotesArr[quoteNumber];
+  console.log(quoteNumber);
 }
 
-console.log("quoteNumber");
-chooseQuote();
 
 

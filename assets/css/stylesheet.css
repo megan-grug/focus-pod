@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Mate+SC&family=Open+Sans+Condensed:wght@300&family=Over+the+Rainbow&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -155,3 +155,20 @@ i{
   margin-top: 90%;
 }
 
+#gratitude
+{
+  background: #6b3b5b8e;
+  height: 50%;
+  clear:right;
+  border-radius: 5px;
+  display:none;
+}
+
+#quotes
+{
+  font-family: 'Mate SC', serif;
+  font-weight: 500;
+  font-size: 25px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
