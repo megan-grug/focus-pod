@@ -1,16 +1,28 @@
 let listOfThings = [];
 
+let pendingTasks = null;
+
+
+function updateTaskCounter(word)
+{
+pendingTasks.innerHTML  = `<p>` + listOfThings.length + `</p>`;
+let thingSpan           = document.getElementById('thingSpan');
+thingSpan.innerHTML     = `<p>` + word + `</p>`;
+}
+
+
+
 //function to add the text from the input box to the todolist as a new todo item
 function addNew() 
-{ 
+   { 
   let inputBox              = document.getElementById('inputBox');
   if (inputBox.value !== " ") 
-  {
-    
+    {
     let todoList            = document.getElementById('todoList');
 
     let newListItem         = document.createElement("div");            //creates the div for the new task
     let newTask             = document.createElement("li");             //creates the li for the new task
+    
     todoList.appendChild(newListItem);                                  //puts the div into the todolist
     newListItem.appendChild(newTask);                                   //puts the li into the new task div
     newTask.innerHTML       = inputBox.value;                           //gives the li a value of whatever user typed in input
@@ -18,65 +30,54 @@ function addNew()
 
     let deleteBtn           = document.createElement("button");         //creates button (to become deleteBtn)
     deleteBtn.innerHTML     = `<i class= "fas fa-trash-alt"></i>`;      //adds the icon making html to the button
+   
     newTask.insertAdjacentElement('beforeend', deleteBtn);              //places the deleteBtn inside the li
     deleteBtn.classList.add(".deleteBtn");
     deleteBtn.addEventListener("click", deleteTask);
 
     let checkBox = document.createElement("button");                    //creates button (to become deleteBtn)
+    
     checkBox.innerHTML      = `<i class = "fas fa-check"></i>`;         //adds the icon making html to the button
+    
     newTask.insertAdjacentElement('beforeend', checkBox);               //places the checkBox inside the li
     checkBox.classList.add(".checkBox");
     checkBox.addEventListener("click", completeTask);
     
     listOfThings.push(newListItem.innerHTML);
     console.log(listOfThings);
+    
     inputBox.value          = " ";                                      //clears the input box
     
-    let pendingTasks        = document.getElementById('pendingTasks');
-    
-    if (listOfThings.length > 1) 
+    pendingTasks        = document.getElementById('pendingTasks');
 
-    {
-      let thing = "things";    
-      pendingTasks.innerHTML  = `<p>` + listOfThings.length + `</p>`;
-      let thingSpan           = document.getElementById('thingSpan');
-      thingSpan.innerHTML     = `<p>` + thing + `</p>`;
-    }
-
-    else if (listOfThings.length === 1)
-    {
-      let thing = "thing";
-      pendingTasks.innerHTML  = `<p>` + listOfThings.length + `</p>`;
-      let thingSpan           = document.getElementById('thingSpan');
-      thingSpan.innerHTML     = `<p>` + thing + `</p>`;
-    }
-  }
-  else
-  {
-    alert("You don't appear to have typed in a task, you cannot add an empty item to your list.");
-  }
-};
+    if       (listOfThings.length >   1) { updateTaskCounter("things"); }
+    else if  (listOfThings.length === 1) { updateTaskCounter("thing"); }
+    else     														 { alert("You don't appear to have typed in a task, you cannot add an empty item to your list."); }
+   }
+}
 
 //darkMode function from W3 Schools (https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp)
 function darkMode() 
 {
-  var element = document.body;
+  var element                                         = document.body;
   element.classList.toggle("dark-mode");
+
 //code to swap moon and sun images my own
   if(document.getElementById("satellite").classList.contains('moon'))
-  document.getElementById("satellite").className = "sun superbutton";
+  document.getElementById("satellite").className      = "sun superbutton";
   
   else document.getElementById("satellite").className = "moon superbutton";
-};
+}
 
-//function to slide the to do list up and down
+//function to slide the to do list up and down 
+
 $(document).ready(function()
 {
   $("#downarrow").click(function()
   {
     $("#main-todo").slideToggle();
-  })
-})
+  });
+});
 
 //function to hide/reveal rainsounds player
 $(document).ready(function()
@@ -84,8 +85,8 @@ $(document).ready(function()
   $("#raincloud").click(function()
   {
     $("#rainsounds").slideToggle();
-  })
-})
+  });
+});
 
 
 //function to delete task when bin icon is pressed - WORKING
@@ -95,36 +96,25 @@ function deleteTask()
   listOfThings.pop();
   console.log(listOfThings);
   
-  if (listOfThings.length > 1) 
-  {
-    let thing = "things";    
-    pendingTasks.innerHTML  = `<p>` + listOfThings.length + `</p>`;
-    let thingSpan           = document.getElementById('thingSpan');
-    thingSpan.innerHTML     = `<p>` + thing + `</p>`;
-  }
-
-  else if (listOfThings.length === 1)
-  {
-    let thing = "thing";
-    pendingTasks.innerHTML  = `<p>` + listOfThings.length + `</p>`;
-    let thingSpan           = document.getElementById('thingSpan');
-    thingSpan.innerHTML     = `<p>` + thing + `</p>`;
-  }
-
-  else if (listOfThings < 1)
-  {
-    let thing = "nothing";
-    pendingTasks.innerHTML  = " ";
-    let thingSpan           = document.getElementById('thingSpan');
-    thingSpan.innerHTML     = `<p>` + thing + `</p>`;
-  }
-};
+  if       (listOfThings.length >   1) { updateTaskCounter("things");   }
+  else if  (listOfThings.length === 1) { updateTaskCounter("thing");    }
+  else if  (listOfThings        <   1) { updateTaskCounter("nothing");  }
+}
 
 //function to add strikethrough styling if checkbox is ticked
 function completeTask()
 {
   this.parentNode.classList.toggle("completed");
-};
+  if($('.div .li.completed').length === $('.ul .div').length)
+  {
+    pendingTasks.innerHTML  = " ";
+    let thingSpan           = document.getElementById('thingSpan');
+    thingSpan.innerHTML     = `<p>` + "nothing" + `</p>`;
+    alert("Congratulations! You have completed all your tasks. Take a well earned break!");
+  }
+}
+
+
 
 //function for 'give up' button
 
@@ -139,6 +129,7 @@ function giveUp()
       function(item) {
         item.remove();
         });
+
     //////////////////////// - end code from Stack Overflow
     let thing               = "nothing";
     pendingTasks.innerHTML  = " ";
@@ -146,14 +137,15 @@ function giveUp()
     thingSpan.innerHTML     = `<p>` + thing + `</p>`;
     alert("Congratulations! You have cast aside the capitalist notion that our worth is based on our productivity!\n \nRejoice and embrace the simple joy of being. \n\n🧘");
   } 
-};
+}
 //function for clock - WORKING
 // CODE FROM https://dev.to/ahmadullahnikzad/how-to-create-digital-clock-in-vanilla-js-2172
 setInterval(showTime,1000);
-function showTime(){
-let date    = new Date();
-let time    = date.toLocaleTimeString();
-document.querySelector('.time').innerHTML=time;
+function showTime()
+{
+  let date    = new Date();
+  let time    = date.toLocaleTimeString();
+  document.querySelector('.time').innerHTML=time;
 }
 
 //function for time quote generator
@@ -189,21 +181,22 @@ const quotesArr =
 "'They always say time changes things, but you actually have to change them yourself.' Andy Warhol",
 "'All we have to decide is what to do with the time that is given us.' J. R. R. Tolkien",
 "'The time for action is now. It’s never too late to do something.' Antoine de Saint-Exupery"
-]
+];
 
-/*
+
 console.log(typeof(quotesArr));
+
+document.getElementById("quotes").innerHTML = quotesArr[10];
+
 
 function chooseQuote()
 { 
   console.log(quotesArr.length);
-  const quoteNumber = new Date();
+  let quoteNumber = getDay();
   document.getElementById("quotes").innerHTML = quotesArr[quoteNumber];
-  };
+}
 
 console.log("quoteNumber");
 chooseQuote();
-*/
-  
-////////////////////////////////////
+
 
