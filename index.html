@@ -30,13 +30,7 @@
       <!--HEART BUTTON-->
       <div class="col-xs-6 col-sm-6 col-m-12" id="heart_wrapper">
         <div><img src="/assets/img/hearts.png" id="heart" role="button" class="superbutton" alt = "heart image - click to access gratitude list"></div>
-          <div id="gratitude">
-            <ul>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-          </div>
+          
       </div>
 
       <!--CLOCK-->
@@ -49,18 +43,26 @@
     <div class="row">
 
       <!--POMODORO TIMER-->
-      <div class="col-xs-12 col-m-4 d-flex justify-content-center">
-        POMODORO TIMER
+      <div class="col-xs-12 col-sm-12 col-m-4 col-lg-4 col-xl-4" id="timer_wrapper">
+        <div id="pom_timer"> 
+          <span id="minutes">25</span>:<span id="seconds">00</span> 
+          <div>
+          <button onclick="startTimer()"><i class="fas fa-play-circle"></i></button>
+          <button onclick="pauseTimer()"><i class="fas fa-pause-circle"></i></button>
+          <button onclick="restartTimer()"><i class="fas fa-redo-alt"></i></button>
+          </div>
+        </div>
+        
       </div>
 
       <!--TO DO BOX-->
-      <div class="col-xs-12 col-m-4 todo_wrapper d-flex justify-content-center">
+      <div class="col-xs-12 col-sm-12 col-m-4 col-lg-4 col-xl-4 todo_wrapper justify-content-center">
         <div class="todobox">
           <header>To Do List <i id="downarrow" class="fas fa-arrow-circle-down" alt="arrow image - click to expand and contract to do list"></i></header>
           <br>
           <div id="main-todo">        
             <div>
-            <input type="text" id="inputBox" placeholder="What do you need to do?">
+            <input type="text" id="inputBox" placeholder=" What do you need to do?">
             <button alt="plus symbol - click to add task to to do list"><i class="fas fa-plus" id="addBtn"  onclick="addNew()"></i></button>
             </div> 
             <ul id="todoList"></ul>
@@ -73,8 +75,19 @@
       </div>
 
       <!--GRATITUDE BOX-->
-      <div class="col-xs-12 col-m-4 d-flex justify-content-center">
-        GRATITUDE BOX
+      <div class="col-xs-12 col-sm-12 col-m-4 col-lg-4 col-xl-4 gratitude_wrapper">
+        <div id="gratitude"> 
+          <p id="gratitude_header">What are you grateful for today?</p>
+          <input type="text" class="gratitude_item" placeholder=" Something you are thankful for">
+          <input type="text" class="gratitude_item" placeholder=" Something which makes you smile">
+          <input type="text" class="gratitude_item" placeholder=" Something which brings you joy">
+          <!--
+          <ul>
+            <li contenteditable="true" placeholder="Item 1" class="gratitude_item"></li>
+            <li contenteditable="true" placeholder="Item 2" class="gratitude_item"></li>
+            <li contenteditable="true" placeholder="Item 3" class="gratitude_item"></li>
+          </ul>-->
+        </div>
       </div>
     </div>
 
@@ -88,7 +101,7 @@
 
       <!--RAINSOUNDS-->
       <div class = "col-xs-12 col-m-4 d-flex justify-content-center">
-        <div id="rainsounds"><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8ymr6UES7vc" aria-label = "Spotify player for a playlist of rain sounds" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
+        <div id="rainsounds"><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8ymr6UES7vc" width="400" height="244" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe></iframe></div>
       </div>
 
       <!--MOON-->

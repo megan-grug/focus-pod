@@ -97,6 +97,15 @@ $(document).ready(function()
   });
 });
 
+//function to hide/reveal gratitude list
+$(document).ready(function()
+{
+  $("#tomato").click(function()
+  {
+    $("#pom_timer").slideToggle();
+  });
+});
+
 
 //function to delete task when bin icon is pressed - WORKING
 function deleteTask()
@@ -193,9 +202,6 @@ const quotesArr =
 "'The time for action is now. It’s never too late to do something.' Antoine de Saint-Exupery"
 ];
 
-
-
-
 window.onload = function chooseQuote()
 { 
   console.log(quotesArr.length);
@@ -206,6 +212,4 @@ window.onload = function chooseQuote()
   document.getElementById("quotes").innerHTML = quotesArr[quoteNumber];
   console.log(quoteNumber);
 }
-
-
 

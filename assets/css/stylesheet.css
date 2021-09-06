@@ -26,7 +26,7 @@ ul{
   font-weight: 800d;
 }
 
-li{
+li.tasks{
   line-height: 1.5;
   list-style-type: none;
   margin-left: 5px;
@@ -128,6 +128,8 @@ i{
 
 #inputBox{
   width: 85%;
+  border:none;
+  border-radius: 5px;
 }
 
 #downarrow{
@@ -142,27 +144,74 @@ i{
   display: none;
 }
 
-#raincloud{
+#timer_wrapper
+{
+  text-align: center;
+}
+
+#pom_timer
+{
+  background: #e635358e;
+  max-width: 400px;
+  clear:right;
+  border-radius: 5px;
+  display:none;
+  margin-top: 20px;
+  padding: 25px;
+  margin-bottom: 20px;
+  min-height: 244px;
+  font-size: 100px;
+}
+
+#raincloud
+{
   margin-top: 90%;
+  max-width: 168px;
+  max-height: 168px;
+}
+
+
+#gratitude_header
+{
+  font-weight: 600;
+}
+
+.gratitude_item
+{
+  border:none;
+  margin-bottom: 10px;
+  cursor:pointer;
+  background: white;
+  border-radius: 5px;
+  width: 80%;
 }
 
 .moon{
   content: url(../img/moon.png);
   margin-top: 90%;
+  max-width: 168px;
+  max-height: 168px;
 }
 
 .sun{
   content: url(../img/sun.png);
   margin-top: 90%;
+  max-width: 168px;
+  max-height: 168px;
 }
 
 #gratitude
 {
   background: #6b3b5b8e;
-  height: 50%;
+  max-width: 400px;
   clear:right;
   border-radius: 5px;
   display:none;
+  margin-top: 20px;
+  padding: 25px;
+  min-height: 244px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 #quotes
@@ -172,24 +221,44 @@ i{
   font-size: 25px;
   margin-bottom: 20px;
   margin-top: 20px;
+  background: #e4dee2af;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 #tomato
 {
   align-items: center;
+  max-width: 168px;
+  max-height: 168px;
 }
-
 
 #heart
 {
  align-items: center;
+ max-width: 168px;
+ max-height: 168px;
 }
-/*LAYOUT FOR XS AND SMALL SIZE*/
-@media screen and (max-width: 767px)
+
+/*LAYOUT FOR XS AND SMALL SIZE------------------------------------------------------------*/
+@media screen and (max-width: 991px)
 {
   #tomato_wrapper
   {
     text-align: center;
+  }
+
+  #pom_timer
+  {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #gratitude
+  {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #heart_wrapper
@@ -200,6 +269,13 @@ i{
   #raincloud_wrapper
   {
     text-align: center;
+  }
+
+  #quotes
+  {
+    margin-left:auto;
+    margin-right: auto;
+    max-width: 400px;
   }
 
   #moon_wrapper
@@ -221,24 +297,28 @@ i{
   {
     content: url(../img/moon.png);
     margin-top: 10%;
-    margin-left: 25%;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .sun
   {
     content: url(../img/sun.png);
     margin-top: 10%;
+    margin-left: 25%;
   }
 
-  .todo_wrapper
+  .todobox
   {
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
+
 }
 
 
 /*LAYOUT FOR MEDIUM SIZE AND ABOVE*/
-@media screen and (min-width: 768px)
+@media screen and (min-width: 992px)
 {
   #tomato_wrapper
   {
@@ -258,6 +338,8 @@ i{
   {
     margin-top: 10%;
     text-align: right;
+    max-width: 168px;
+    max-height: 168px;
   }
 
   #raincloud_wrapper
@@ -265,16 +347,57 @@ i{
     text-align: right;
   }
 
-
   .moon{
     content: url(../img/moon.png);
     margin-top: 10%;
     text-align: left;
+    max-width: 168px;
+    max-height: 168px;
   }
   
   .sun{
     content: url(../img/sun.png);
     margin-top: 10%;
+    max-width: 168px;
+    max-height: 168px;
   }
+
+  #tomato
+  {
+    max-width: 168px;
+    max-height: 168px;
+  }
+
+  #heart
+  {
+    max-width: 168px;
+    max-height: 168px;
+  }
+
+  #gratitude
+{
+  background: #6b3b5b8e;
+  max-width: 400px;
+  clear:right;
+  border-radius: 5px;
+  display:none;
+  margin: 0;
+  padding: 25px;
+  min-height: 244px;
+}
+
+#pom_timer
+{
+  background: #e635358e;
+  max-width: 400px;
+  clear:right;
+  border-radius: 5px;
+  display:none;
+  margin-top: 20px;
+  padding: 25px;
+  margin: 0;
+  min-height: 244px;
+}
+
 
 }
