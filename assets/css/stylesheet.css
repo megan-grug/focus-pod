@@ -172,3 +172,92 @@ i{
   margin-bottom: 20px;
   margin-top: 20px;
 }
+
+#tomato
+{
+  align-items: center;
+}
+
+
+#heart
+{
+ align-items: center;
+}
+/*LAYOUT FOR XS AND SMALL SIZE*/
+@media screen and (max-width: 767px)
+{
+  #tomato_wrapper
+  {
+    text-align: center;
+  }
+
+  #heart_wrapper
+  {
+    text-align: center;
+  }
+
+  #raincloud_wrapper
+  {
+    text-align: center;
+  }
+
+  #moon_wrapper
+  {
+    text-align: center;
+  }
+
+  #raincloud{
+    margin-top: 10%;
+  }
+  
+  .moon{
+    content: url(../img/moon.png);
+    margin-top: 10%;
+  }
+  
+  .sun{
+    content: url(../img/sun.png);
+    margin-top: 10%;
+  }
+
+  .todo_wrapper
+  {
+    text-align: center;
+  }
+}
+
+
+/*LAYOUT FOR MEDIUM SIZE AND ABOVE*/
+@media screen and (min-width: 768px)
+{
+  #tomato_wrapper
+  {
+    text-align: left;
+  }
+
+  #heart_wrapper
+  {
+    text-align: right;
+  }
+
+  #rainsounds{
+    display: none;
+  }
+  
+  #raincloud{
+    margin-top: 10%;
+    text-align: right;
+  }
+  
+  .moon{
+    content: url(../img/moon.png);
+    margin-top: 10%;
+    text-align: left;
+  }
+  
+  .sun{
+    content: url(../img/sun.png);
+    margin-top: 10%;
+  }
+
+}
