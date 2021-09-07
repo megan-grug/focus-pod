@@ -211,5 +211,67 @@ window.onload = function chooseQuote()
 
   document.getElementById("quotes").innerHTML = quotesArr[quoteNumber];
   console.log(quoteNumber);
+};
+
+////////////////////////POMODORO TIMER
+
+
+let minute_count = document.getElementById("minutes");
+let second_count = document.getElementById("seconds");
+let chime = new Audio("timer_start.wav");
+let played = false;
+
+function startTimer()
+{ let timer = setInterval(secondsCountdown, 1000);
+  //play timer start sound
+  chime.play();
+  //disable start button
+  let startButton = document.getElementById("startButton");
+  startButton.disabled = true;
+  //start countdown
+  secondsCountdown();
 }
 
+function secondsCountdown()
+{ let minute_count = document.getElementById("minutes");
+  let second_count = document.getElementById("seconds");
+    
+  if (second_count.innerHTML != 0)
+  {
+   second_count.innerHTML = second_count.innerHTML -1;
+  }
+  else if (second_count.innerHTML == 0 && minute_count.innerHTML != 0)
+  {
+    second_count.innerHTML =59;
+    minute_count.innerHTML = minute_count.innerHTML -1;
+  }
+  else if (second_count.innerHTML == 0 && minute_count.innerHTML == 0)
+    {
+      let achievement_bell = new Audio("achievement_bell.wav");
+      
+        if (played == false)
+        {
+          achievement_bell.play();
+          played = true;
+        }
+    }
+}
+//////////PAUSE FUNCTION
+function pauseTimer()
+  {
+  let timer = setInterval(secondsCountdown, 1000);
+  clearInterval(timer);
+  }
+
+////RESET FUNCTION
+function resetTimer()
+{ let startButton = document.getElementById("startButton");
+  startButton.disabled = false;
+  let minute_count = document.getElementById("minutes");
+  let second_count = document.getElementById("seconds");
+
+  minute_count.innerHTML = 25;
+  second_count.innerHTML = "00";
+  let timer = setInterval(secondsCountdown, 1000);
+  clearInterval(timer);
+}
