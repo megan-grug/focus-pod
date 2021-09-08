@@ -113,6 +113,12 @@ position:       absolute;
 right:          auto;
 }
 
+.checkBox
+{
+  height:       42px;
+  width:        42px;
+}
+
 .completed
 {
 text-decoration:line-through;

@@ -42,7 +42,9 @@ function addNew ()
       deleteBtn.addEventListener("click", deleteTask);                    //adds event listener to make button functional
 
       let checkBox = document.createElement("button");                    //creates button (to become checkBox button)
-      checkBox.innerHTML      = `<i class = "fas fa-check"></i>`;         //adds the icon html to the button
+      checkBox.classList.add("checkBox");
+      checkBox.innerHTML = `<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>`;
+      /*checkBox.innerHTML      = `<i class = "fas fa-check"></i>`;         //adds the icon html to the button*/
     
       newTask.insertAdjacentElement('beforeend', checkBox);               //places the checkBox inside the li
       checkBox.classList.add("checkBox");                                 //adds checkBox class for styling
