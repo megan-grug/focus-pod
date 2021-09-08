@@ -9,14 +9,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="assets/css/stylesheet.css" rel="stylesheet" type="text/css"/>
     <script src="https://kit.fontawesome.com/6f005b098f.js" crossorigin="anonymous"></script>
-    
     <script src="JS/script.js" language="javascript"></script>
-  
 </head>
 <body>
 
@@ -26,12 +23,12 @@
 
       <!--TOMATO BUTTON-->
       <div class="col-xs-6 col-sm-6 col-m-12" id="tomato_wrapper">
-         <div><img src="/assets/img/tomato.png" id="tomato" role="button" class="superbutton" alt = "tomato image - click to access pomodoro timer"></div> 
+         <div><img src="/assets/img/tomato.png" id="tomato" tabindex=0 role="button" class="superbutton" alt = "tomato image - click to access pomodoro timer"></div> 
       </div>
 
       <!--HEART BUTTON-->
       <div class="col-xs-6 col-sm-6 col-m-12" id="heart_wrapper">
-        <div><img src="/assets/img/heartsblack.png" id="heart" role="button" class="superbutton" alt = "heart image - click to access gratitude list"></div>
+        <div><img src="/assets/img/heartsblack.png" tabindex=0 id="heart" role="button" class="superbutton" alt = "heart image - click to access gratitude list"></div>
           
       </div>
 
@@ -60,17 +57,18 @@
       <!--TO DO BOX-->
       <div class="col-xs-12 col-sm-12 col-m-4 col-lg-4 col-xl-4 todo_wrapper justify-content-center">
         <div class="todobox">
-          <header>To Do List <i id="downarrow" class="fas fa-arrow-circle-down" alt="arrow image - click to expand and contract to do list"></i></header>
+          <header>To Do List <i id="downarrow" tabindex=0 class="fas fa-arrow-circle-down" alt="arrow image - click to expand and contract to do list"></i></header>
           <br>
+          <label for="inputBox">Add tasks to your list:</label>
           <div id="main-todo">        
             <div>
-            <input type="text" id="inputBox" placeholder=" What do you need to do?">
-            <button alt="plus symbol - click to add task to to do list"><i class="fas fa-plus" id="addBtn"  onclick="addNew()"></i></button>
+            <input type="text" aria-label="Type in new to do task" id="inputBox" placeholder=" What do you need to do?">
+            <button aria-label="plus symbol - click to add task to to do list" tabindex=0><i class="fas fa-plus" id="addBtn"  onclick="addNew()"></i></button>
             </div> 
             <ul id="todoList"></ul>
             <div class="footer">
               <div>You have <div id="pendingTasks"></div> <div id="thingSpan">nothing</div> to do!</div>
-              <button id="give-up" onclick="giveUp()" aria-label="'Delete All' button - click to delete all tasks"> Delete All </button>
+              <button id="give-up" onclick="giveUp()" tabindex=0 aria-label="'Delete All' button - click to delete all tasks"> Delete All </button>
             </div>
           </div>
         </div>
@@ -108,12 +106,12 @@
 
       <!--MOON-->
       <div class = "col-xs-6 col-sm-6 col-m-4" id="moon_wrapper">
-        <div id="satellite" class="superbutton moon" aria-pressed="false" role="button" alt= "moon image - click to toggle dark mode" onclick="darkMode()"></div>
+        <div id="satellite" tabindex=0 class="superbutton moon" aria-pressed="false" role="button" aria-label= "moon image - click to toggle dark mode" onclick="darkMode()"></div>
       </div>
       
       <!--RAINCLOUD-->
       <div class = "col-xs-6 col-sm-6 col-m-4" id="raincloud_wrapper">
-        <div><img src="/assets/img/raincloud.png" role="button" class="superbutton align-bottom" id="raincloud" alt= "raincloud button to show and hide rain sounds player"></div>
+        <div><img src="/assets/img/raincloud.png" role="button" tabindex=0 class="superbutton align-bottom" id="raincloud" alt= "raincloud button to show and hide rain sounds player"></div>
       </div>
     </div>
   </div>
