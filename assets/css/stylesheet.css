@@ -17,6 +17,19 @@ background:     url(../img/dayforest.jpg) no-repeat center center fixed;
 background-size:cover;
 }
 
+footer{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+}
+
+footer a{
+  color:white;
+}
+
+
 ul
 {
 margin-top:     25px;
@@ -25,6 +38,14 @@ margin-left:    0;
 margin-bottom:  0;
 padding:        0;
 font-weight:    800;
+}
+
+h1{
+  text-align: center;
+}
+
+td{
+  padding-right: 20px;
 }
 
 img
@@ -137,10 +158,26 @@ padding-bottom: 20px;
 font-size: 50px;
 }
 
+#todoexample{
+  width: 150px;
+  height: auto;
+}
+
+.howtoimg
+{
+  width: 168px;
+  height: auto;
+}
+
+.howtolist
+{
+  font-size: medium;
+  font-weight: 100;
+}
 
 .superbutton
 {
-width:          50%;
+width:          100%;
 height:         auto;
 cursor:         pointer;
 }
@@ -188,17 +225,17 @@ width:          80%;
 }
 
 .moon{
-content:        url(../img/moon.png);
+content:        url(../img/finalmoon.png);
 margin-top:     90%;
-max-width:      168px;
-max-height:     168px;
+max-width:      250px;
+max-height:     250px;
 }
 
 .sun{
-content:        url(../img/sun.png);
+content:        url(../img/finalsun.png);
 margin-top:     90%;
-max-width:      168px;
-max-height:     168px;
+max-width:      250px;
+max-height:     250px;
 }
 
 /* || ID STYLES----------------------------------------------------------------------------------------------*/
@@ -218,8 +255,8 @@ font-size:      100px;
 #raincloud
 {
 margin-top:     90%;
-max-width:      168px;
-max-height:     168px;
+max-width:      250px;
+max-height:     250px;
 }
 
 #inputBox{
@@ -242,6 +279,7 @@ color:          white;
 #rainsounds
 {
 display:        none;
+
 }
 
 #timer_wrapper
@@ -284,15 +322,32 @@ padding:        5px;
 #tomato
 {
 align-items:    center;
-max-width:      168px;
-max-height:     168px;
+max-width:      250px;
+max-height:     250px;
 }
 
 #heart
 {
 align-items:    center;
-max-width:      168px;
-max-height:     168px;
+max-width:      250px;
+max-height:     250px;
+}
+
+#hourglass404
+{
+  height: 162px;
+  width: auto;
+}
+
+.contentdiv
+{
+  width:80%;
+  margin-top: 50px;
+  margin-left:auto;
+  margin-right: auto;
+  padding: 10%;
+  background-color: rgba(245, 245, 245, 0.801);
+  border-radius: 5px;
 }
 
 /*LAYOUT FOR XS AND SMALL SIZE------------------------------------------------------------*/
@@ -350,7 +405,7 @@ max-height:     168px;
   
   .moon
   {
-  content:      url(../img/moon.png);
+  content:      url(../img/finalmoon.png);
   margin-top:   10%;
   margin-left:  auto;
   margin-right: auto;
@@ -358,7 +413,7 @@ max-height:     168px;
   
   .sun
   {
-  content:      url(../img/sun.png);
+  content:      url(../img/finalsun.png);
   margin-top:   10%;
   margin-left:  25%;
   }
