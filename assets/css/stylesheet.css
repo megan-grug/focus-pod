@@ -62,14 +62,19 @@ i{
 }
 
 .dark-mode {
-  background: url(../img/nightforest3.jpg); 
-  position: fixed; 
+  
+  background: url(../img/nightforest4.jpg) no-repeat; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /*position: fixed; 
   top: 0; 
-  left: 0; 
+  left: 0;*/ 
 
-  /* Preserve aspet ratio */
+  /* Preserve aspet ratio */ /*
   min-width: 100%;
-  min-height: 100%;
+  min-height: 100%;*/
   color: white;
 }
 
@@ -102,6 +107,11 @@ i{
 {
   text-decoration: line-through;
   color:red;
+}
+
+.break
+{
+  background: rgba(45, 77, 45, 0.527);
 }
 
 .clock{
@@ -148,10 +158,14 @@ i{
 {
   text-align: center;
 }
+.pom_class
+{
+  background: #e635358e;
+}
 
 #pom_timer
 {
-  background: #e635358e;
+  
   max-width: 400px;
   clear:right;
   border-radius: 5px;
@@ -214,6 +228,19 @@ i{
   text-align: center;
 }
 
+.quotes_class
+{
+  background: #e4dee2af;
+  color: black
+}
+
+.dark_quotes
+{
+  background: rgba(0, 0, 0, 0.685);
+  border-radius: 5px;
+  font-weight: 800px;
+}
+
 #quotes
 {
   font-family: 'Mate SC', serif;
@@ -221,7 +248,7 @@ i{
   font-size: 25px;
   margin-bottom: 20px;
   margin-top: 20px;
-  background: #e4dee2af;
+  
   border-radius: 5px;
   padding: 5px;
 }
