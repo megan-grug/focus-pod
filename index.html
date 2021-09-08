@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="assets/css/stylesheet.css" rel="stylesheet" type="text/css"/>
     <script src="https://kit.fontawesome.com/6f005b098f.js" crossorigin="anonymous"></script>
-    <script src="JS/script.js" language="javascript"></script>
+    <script src="JS/script.js"></script>
 </head>
 <body>
 
@@ -28,13 +28,13 @@
 
       <!--HEART BUTTON-->
       <div class="col-xs-6 col-sm-6 col-m-12" id="heart_wrapper">
-        <div><img src="/assets/img/heartsblack.png" tabindex=0 id="heart" role="button" class="superbutton" alt = "heart image - click to access gratitude list"></div>
+        <div><img src="/assets/img/hearts.png" tabindex=0 id="heart" role="button" class="superbutton" alt = "heart image - click to access gratitude list"></div>
           
       </div>
 
       <!--CLOCK-->
       <div class="col-12">
-        <h1 class="time d-flex justify-content-center"></h1>
+        <div class="time d-flex justify-content-center"></div>
       </div>
     </div>
             
@@ -44,7 +44,7 @@
       <!--POMODORO TIMER-->
       <div class="col-xs-12 col-sm-12 col-m-4 col-lg-4 col-xl-4" id="timer_wrapper">
         <div id="pom_timer" class="pom_class"> 
-          <span id="minutes">00</span>:<span id="seconds">05</span> 
+          <span id="minutes">25</span>:<span id="seconds">00</span> 
           <div>
           <button id="startButton" onclick="startTimer()"><i class="fas fa-play-circle"></i></button>
           <button onclick="pauseTimer()"><i class="fas fa-pause-circle"></i></button>
@@ -57,13 +57,15 @@
       <!--TO DO BOX-->
       <div class="col-xs-12 col-sm-12 col-m-4 col-lg-4 col-xl-4 todo_wrapper justify-content-center">
         <div class="todobox">
-          <header>To Do List <i id="downarrow" tabindex=0 class="fas fa-arrow-circle-down" alt="arrow image - click to expand and contract to do list"></i></header>
+          <header>To Do List 
+            <button tabindex=0 aria-label="arrow image - click to expand and contract to do list"><i id="downarrow" class="fas fa-arrow-circle-down" ></i></button>
+          </header>
           <br>
           <label for="inputBox">Add tasks to your list:</label>
           <div id="main-todo">        
             <div>
             <input type="text" aria-label="Type in new to do task" id="inputBox" placeholder=" What do you need to do?">
-            <button aria-label="plus symbol - click to add task to to do list" tabindex=0><i class="fas fa-plus" id="addBtn"  onclick="addNew()"></i></button>
+            <button aria-label="plus symbol - click to add task to to do list" tabindex=0 onclick="addNew()"><i class="fas fa-plus" id="addBtn"></i></button>
             </div> 
             <ul id="todoList"></ul>
             <div class="footer">
@@ -101,7 +103,7 @@
 
       <!--RAINSOUNDS-->
       <div class = "col-xs-12 col-m-4 d-flex justify-content-center">
-        <div id="rainsounds"><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8ymr6UES7vc" width="400" height="244" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe></iframe></div>
+        <div id="rainsounds"><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8ymr6UES7vc" width="400" height="244" allow="encrypted-media"></iframe></div>
       </div>
 
       <!--MOON-->

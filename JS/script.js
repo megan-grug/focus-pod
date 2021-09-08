@@ -3,6 +3,14 @@ let listOfThings = [];
 
 let pendingTasks = null;
 
+let enabledTaskCount = 0;
+
+const nullstr = "";
+
+let inputBox  = null;
+
+let todoList  = null;
+    
 
 //--Function for updating the task counter in the to do list---------------------------------------------------
 function updateTaskCounter (word)
@@ -16,16 +24,14 @@ thingSpan.innerHTML           = `<p>` + word + `</p>`;
 //--Function for adding the text in the input box to the to do list as a new item------------------------------
 function addNew () 
    { 
-    let inputBox              = document.getElementById('inputBox');      //identify input box
-    if (inputBox.value !== " ")                                           //condition: as long as input box is not empty
+    if (inputBox.value !== nullstr)                                       //condition: as long as input box is not empty
     {
-      let todoList            = document.getElementById('todoList')       //identify to do list
       let newListItem         = document.createElement("div");            //creates the div for the new task
       let newTask             = document.createElement("li");             //creates the li for the new task
     
       todoList.appendChild(newListItem);                                  //puts the div into the todolist
       newListItem.appendChild(newTask);                                   //puts the li into the new task div
-      newTask.innerHTML       = inputBox.value;                           //gives the li a value of whatever user typed in input
+      newTask.innerText       = inputBox.value;                           //gives the li a value of whatever user typed in input
       newTask.classList.add("tasks");
 
       let deleteBtn           = document.createElement("button");         //creates button (to become deleteBtn)
@@ -43,26 +49,31 @@ function addNew ()
       checkBox.addEventListener("click", completeTask);                   //adds event listener to make button functional
     
       listOfThings.push(newListItem.innerHTML);                           //adds the new task to the listOfThings array
-      inputBox.value          = " ";                                      //clears the input box
+      inputBox.value          = nullstr;                                  //clears the input box
     
       pendingTasks            = document.getElementById('pendingTasks');
 
       if       (listOfThings.length >   1) { updateTaskCounter("things"); }
       else if  (listOfThings.length === 1) { updateTaskCounter("thing");  }
-      else     														 { alert("You don't appear to have typed in a task, you cannot add an empty item to your list."); }
+        
+      enabledTaskCount++;
+
     }
-}
+    else if (inputBox.value == nullstr) 
+    { 
+    alert("You don't appear to have typed in a task, you cannot add an empty item to your list."); //ONLY WORKING ON SECOND TRY (ALLOWS USER TO INPUT ONE EMPTY ITEM)
+    }
+  } 
 
 
 //--darkMode function to change page styling to dark version and toggle moon and sun icons---------------------
 function darkMode () 
 {
-  let body              = document.body;                                  //identifies document body
-  let quotes            = document.getElementById("quotes");              //identifies quotes section
+  let quotes            = document.getElementById("quotes");              //get reference to quotes section
   
-  body.classList.toggle   ("dark-mode");                                  //toggles 'dark-mode' class on and off to toggle styling between default and dark mode
-  quotes.classList.remove ("quotes_class");                               //removes default styling for quote section
-  quotes.classList.add    ("dark_quotes");                                //adds 'dark' styling for quote section
+  document.body.classList.toggle  ("dark-mode");                          //toggles 'dark-mode' class on and off to toggle styling between default and dark mode
+  quotes.classList.remove         ("quotes_class");                       //removes default styling for quote section
+  quotes.classList.add            ("dark_quotes");                        //adds 'dark' styling for quote section
   
   if   (document.getElementById("satellite").classList.contains("moon")) //swaps between moon and sun images
 
@@ -113,15 +124,20 @@ $(document).ready(function()
 
 
 //--Function to delete task when bin icon is pressed-----------------------------------------------------------
-function deleteTask ()
+function deleteTask (evt)
 {
   this.parentNode.parentNode.remove();
   listOfThings.pop();
-  console.log(listOfThings);
-  
+    
   if       (listOfThings.length >   1) { updateTaskCounter("things");   }
   else if  (listOfThings.length === 1) { updateTaskCounter("thing");    }
   else if  (listOfThings        <   1) { updateTaskCounter("nothing");  }
+
+  if (!evt.currentTarget.previousSibling.checked) // Might need to be previousSibling.
+    {
+    enabledTaskCount--;
+    }
+
 }
 
 //--Function to add strikethrough styling if checkbox is ticked------------------------------------------------
@@ -129,8 +145,8 @@ function completeTask ()
 {
   this.parentNode.classList.toggle("completed");
 
-  /*if($('.li.completed').length === $('.ul .div').length)*/ //DIDN'T WORK - CHECKING OFF ONE ITEM TRIGGERED THE ALERT FOR ALL ITEMS COMPLETED
-  if($('.li.completed').length === $(listOfThings).length)   //DOESN'T WORK - CHECKING OFF ALL ITEMS FAILS TO TRIGGER THE ALERT OR COUNTDOWN TO 0 TASKS
+  /*if($('.li.completed').length === $('.ul .div').length)*///------------DIDN'T WORK - CHECKING OFF ONE ITEM TRIGGERED THE ALERT FOR ALL ITEMS COMPLETED
+  if($('.li.completed').length === $(listOfThings).length)//--------------DOESN'T WORK - CHECKING OFF ALL ITEMS FAILS TO TRIGGER THE ALERT OR COUNTDOWN TO 0 TASKS
   {
     pendingTasks.innerHTML  = " ";
     let thingSpan           = document.getElementById('thingSpan');
@@ -140,6 +156,10 @@ function completeTask ()
 }
 
 
+
+
+
+
 //--Function for 'delete all' button---------------------------------------------------------------------------
 function giveUp ()
 {
@@ -147,7 +167,6 @@ function giveUp ()
   {
     //--Code from Stack Overflow
     listOfThings.splice(0, listOfThings.length);
-    console.log(listOfThings);
     Array.prototype.slice.call(document.getElementsByTagName('li')).forEach(
       function(item) {
         item.remove();
@@ -162,13 +181,12 @@ function giveUp ()
 }
 //--Function for clock-----------------------------------------------------------------------------------------
 //--CODE FROM https://dev.to/ahmadullahnikzad/how-to-create-digital-clock-in-vanilla-js-2172
-setInterval (showTime,1000);
-function showTime ()
+setInterval (function ()
 {
   let date    = new Date();
   let time    = date.toLocaleTimeString();
   document.querySelector('.time').innerHTML=time;
-}
+}, 1000);
 
 //--Function for the date based quote generator--------------------------------------------------------------------
 const quotesArr = 
@@ -209,80 +227,107 @@ window.onload     = function chooseQuote ()
 { 
   let now         = new Date();                                           //get current date
   let quoteNumber = now.getDate();                                        //assign the day of the month to a variable
+  
+  timerBox        = document.getElementById("pom_timer");
 
-  document.getElementById("quotes").innerHTML = quotesArr[quoteNumber];   //give the quotes sectin the inner HTML of whichever quote is at the index in the array which corresponds to the day of the month
+  minute_count    = document.getElementById("minutes");
+  second_count    = document.getElementById("seconds");
+
+  startButton     = document.getElementById("startButton");
+  
+  document.getElementById("quotes").innerHTML = quotesArr[quoteNumber];   //give the quotes section the inner HTML of whichever quote is at the index in the array which corresponds to the day of the month
+
+  inputBox        = document.getElementById('inputBox');
+
+  todoList        = document.getElementById('todoList');      
+    
+
 };
 
 //--POMODORO TIMER FUNCTIONS-----------------------------------------------------------------------------------
 
 
-let minute_count = document.getElementById("minutes");
-let second_count = document.getElementById("seconds");
-let chime = new Audio("timer_start.wav");
-let played = false;
+let minute_count = null;
+let second_count = null;
+
+const initial_minutes = 24;
+const initial_seconds = 60;
+
+let seconds_remaining   = initial_seconds;
+let minutes_remaining   = initial_minutes;
+
+let played       = false;
+
+let startBell    = new Audio("timer_start.wav");
+let endBell      = new Audio("timer_end.wav");  
+
+let timerBox     = null;
+let timer        = null;
+
+let startButton  = null; 
 
 //--Function to start the pomodoro timer-----------------------------------------------------------------------
 
+
 function startTimer ()
 { 
-  let timer             = setInterval (secondsCountdown, 1000);           //sets the interval for how often the secondsCountdown will be called
-  let startButton       = document.getElementById("startButton");               
-
+  timer                 = setInterval (secondsCountdown, 1000);           //sets the interval for how often the secondsCountdown will be called
   startButton.disabled  = true;                                           //disable start button
-  chime.play();                                                           //play timer start sound
-  secondsCountdown  ();                                                   //start countdown
+  startBell.play();                                                       //play timer start sound
 }
+
 
 function secondsCountdown ()
 { 
-  let minute_count = document.getElementById("minutes");
-  let second_count = document.getElementById("seconds");
+  if      (seconds_remaining > 0)                                         //if seconds greater than 0 - decrement seconds by 1
+  {
+  second_count.innerText     = --seconds_remaining;
+  minute_count.innerText     =   minutes_remaining;
+  }
+
+  else if (seconds_remaining == 0 && minutes_remaining > 0)               //if seconds IS 0 but minutes is greater than 0
+  {
+  second_count.innerText     = seconds_remaining = (initial_seconds - 1); //change seconds to 59
+  minute_count.innerText     = --minutes_remaining;                       //decrement minutes by 1
+  }
+
+  else if (seconds_remaining == 0 && minutes_remaining == 0)              //if BOTH seconds and minutes are 0 - i.e. countdown has finished
+    {                                                                               
+    timerBox.classList.remove("pom_class");                               //remove red styling from pom_timer box
+    timerBox.classList.add("break");                                      //add green styling to pom_timer box
     
-  if      (second_count.innerHTML != 0)
-  {
-  second_count.innerHTML     = second_count.innerHTML -1;
-  }
+    alert("Time to take a break!");
+    resetTimer(); 
 
-  else if (second_count.innerHTML == 0 && minute_count.innerHTML != 0)
-  {
-  second_count.innerHTML = 59;
-  minute_count.innerHTML = minute_count.innerHTML -1;
-  }
-
-  else if (second_count.innerHTML == 0 && minute_count.innerHTML == 0)
-    {
-    let achievement_bell  = new Audio("achievement_bell.wav");
-    let timerBox          = document.getElementById("pom_timer");
-
-    timerBox.classList.remove("pom_class")
-    timerBox.classList.add("break");
-
-      if (played == false)
+    if (played == false)
       {
-      achievement_bell.play();
+      endBell.play();
       played = true;
-      }    
-    }
-}
-//--Function to pause the pomodoro timer-- NOT WORKING AT ALL
-function pauseTimer ()
-  {
-  let timer = setInterval(secondsCountdown, 1000);
-  clearInterval(timer);
-  }
+      }  
 
-//--Function to reset the pomodoro timer to 25:00-- WORKS BUT THE TIMER IMMEDIATELY STARTS COUNTING DOWN. SHOULD REMAIN STATIC.
+    }
+
+}
+//-------------------------------------------------------------------------------------------------------
+
+function pauseTimer () 
+{ 
+  clearInterval(timer); 
+  startButton.disabled = false;
+}
+
 function resetTimer ()
 { 
-let startButton         = document.getElementById("startButton");
-let timer               = setInterval(secondsCountdown, 1000);
-let minute_count        = document.getElementById("minutes");
-let second_count        = document.getElementById("seconds");
+startButton.disabled       = false;
 
-startButton.disabled    = false;
-minute_count.innerHTML  = 25;
-second_count.innerHTML  = "00";
+seconds_remaining          = initial_seconds; 
+minutes_remaining          = initial_minutes;
+
+second_count.innerText     = "00";                  
+minute_count.innerText     = initial_minutes +1;
+
 clearInterval (timer);
+
 }
 
 //-------------------------------------------------------------------------------------------------------------

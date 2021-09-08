@@ -75,7 +75,7 @@ background:     #9f60f1;
 /* || CLASS STYLES-------------------------------------------------------------------------------------------*/
 .dark-mode 
 {
-background:     url(../img/nightforest4.jpg) no-repeat; 
+background:     url(../img/nightforest.jpg) no-repeat; 
 background-size:cover;
 color:          white;
 }
@@ -86,7 +86,7 @@ background:     rgba(9, 37, 65, 0.7);
 }
 
 .dark-mode button{
-  background: black;
+  background:   black;
 }
 
 .todobox
@@ -116,18 +116,21 @@ right:          auto;
 .completed
 {
 text-decoration:line-through;
-color:          red;
+font-style:     italic;
+color:          black;
 }
 
 .break
 {
 background:     rgba(45, 77, 45, 0.527);
+padding-bottom: 20px;
 }
 
-.clock
+.time
 {
-text-align:     center;
+font-size: 50px;
 }
+
 
 .superbutton
 {
