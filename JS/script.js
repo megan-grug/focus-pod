@@ -15,11 +15,12 @@ let todoList  = null;
 //--Function for updating the task counter in the to do list---------------------------------------------------
 function updateTaskCounter (word)
 {
-pendingTasks.innerHTML        = `<p>` + listOfThings.length + `</p>`;
+if (enabledTaskCount == 0) {enabledTaskCount = nullstr;}
+
+pendingTasks.innerHTML        = `<p>` + enabledTaskCount + `</p>`;
 let thingSpan                 = document.getElementById('thingSpan');
 thingSpan.innerHTML           = `<p>` + word + `</p>`;
 }
-
 
 //--Function for adding the text in the input box to the to do list as a new item------------------------------
 function addNew () 
@@ -43,22 +44,20 @@ function addNew ()
 
       let checkBox = document.createElement("button");                    //creates button (to become checkBox button)
       checkBox.classList.add("checkBox");
-      checkBox.innerHTML = `<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>`;
-      /*checkBox.innerHTML      = `<i class = "fas fa-check"></i>`;         //adds the icon html to the button*/
+      checkBox.innerHTML = `<input type="checkbox" id="tickBox" name="tickBox"><label for="tickBox"></label>`;
     
       newTask.insertAdjacentElement('beforeend', checkBox);               //places the checkBox inside the li
       checkBox.classList.add("checkBox");                                 //adds checkBox class for styling
-      checkBox.addEventListener("click", completeTask);                   //adds event listener to make button functional
+      checkBox.addEventListener("click", checkBoxTicked);                 //adds event listener to make button functional
     
       listOfThings.push(newListItem.innerHTML);                           //adds the new task to the listOfThings array
       inputBox.value          = nullstr;                                  //clears the input box
     
       pendingTasks            = document.getElementById('pendingTasks');
-
-      if       (listOfThings.length >   1) { updateTaskCounter("things"); }
-      else if  (listOfThings.length === 1) { updateTaskCounter("thing");  }
-        
       enabledTaskCount++;
+      
+      if       (enabledTaskCount >   1) { updateTaskCounter("things"); }
+      else if  (enabledTaskCount === 1) { updateTaskCounter("thing");  } 
 
     }
     else if (inputBox.value == nullstr) 
@@ -66,6 +65,99 @@ function addNew ()
     alert("You don't appear to have typed in a task, you cannot add an empty item to your list."); //ONLY WORKING ON SECOND TRY (ALLOWS USER TO INPUT ONE EMPTY ITEM)
     }
   } 
+
+
+
+//--Function to delete task when bin icon is pressed-----------------------------------------------------------
+function deleteTask (evt)
+{
+  this.parentNode.parentNode.remove();
+  listOfThings.pop();
+    
+  if       (listOfThings.length >   1) { updateTaskCounter("things");   }
+  else if  (listOfThings.length === 1) { updateTaskCounter("thing");    }
+  else if  (listOfThings        <   1) { updateTaskCounter("nothing");  }
+
+  if (!evt.currentTarget.adjacentSibling.checked) // Might need to be previousSibling.
+    {
+    enabledTaskCount--;
+    }
+
+}
+
+/*function checkBoxTicked() // this version keeps incrementing the pendingtaskcount any time you check or uncheck the checkbox
+{
+  if (this.checked)
+  { 
+    this.parentNode.classList.add("completed");
+    enabledTaskCount--;
+   
+    if       (enabledTaskCount >   1) { updateTaskCounter("things");   }
+    else if  (enabledTaskCount === 1) { updateTaskCounter("thing");    }
+    else if  (enabledTaskCount <   1) { updateTaskCounter("nothing");  }
+
+  }
+
+  else if (!this.checked)
+  {
+    this.parentNode.classList.remove("completed");
+    enabledTaskCount++;
+   
+    if       (enabledTaskCount >   1) { updateTaskCounter("things");   }
+    else if  (enabledTaskCount === 1) { updateTaskCounter("thing");    }
+    else if  (enabledTaskCount <   1) { updateTaskCounter("nothing");  }
+  }
+
+}
+
+*/
+function checkBoxTicked ()
+{
+  this.parentNode.classList.add("completed");
+  this.onclick = checkBoxUnticked;
+  enabledTaskCount--;
+   
+  if       (enabledTaskCount >   1) { updateTaskCounter("things");   }
+  else if  (enabledTaskCount === 1) { updateTaskCounter("thing");    }
+  else if  (enabledTaskCount <   1) { updateTaskCounter("nothing");  }
+
+ }
+
+//---------------------------------------------
+
+function checkBoxUnticked ()
+{
+  this.parentNode.classList.remove("completed");
+  enabledTaskCount++;
+  this.onclick = checkBoxTicked;
+
+  if       (enabledTaskCount >   1) { updateTaskCounter("things");   }
+  else if  (enabledTaskCount === 1) { updateTaskCounter("thing");    }
+  else if  (enabledTaskCount <   1) { updateTaskCounter("nothing");  }
+
+}
+
+
+
+//--Function for 'delete all' button---------------------------------------------------------------------------
+function giveUp ()
+{
+  if (listOfThings.length > 0)
+  {
+    //--Code from Stack Overflow
+    listOfThings.splice(0, listOfThings.length);
+    Array.prototype.slice.call(document.getElementsByTagName('li')).forEach(
+      function(item) {
+        item.remove();
+        });
+    //--end code from Stack Overflow
+
+    pendingTasks.innerHTML  = " ";
+    let thingSpan           = document.getElementById('thingSpan');
+    thingSpan.innerHTML     = `<p>` + "nothing" + `</p>`;
+    alert("Congratulations! You have cast aside the capitalist notion that our worth is based on our productivity!\n \nRejoice and embrace the simple joy of being. \n\n🧘");
+  } 
+}
 
 
 //--darkMode function to change page styling to dark version and toggle moon and sun icons---------------------
@@ -125,62 +217,6 @@ $(document).ready(function()
 });
 
 
-//--Function to delete task when bin icon is pressed-----------------------------------------------------------
-function deleteTask (evt)
-{
-  this.parentNode.parentNode.remove();
-  listOfThings.pop();
-    
-  if       (listOfThings.length >   1) { updateTaskCounter("things");   }
-  else if  (listOfThings.length === 1) { updateTaskCounter("thing");    }
-  else if  (listOfThings        <   1) { updateTaskCounter("nothing");  }
-
-  if (!evt.currentTarget.previousSibling.checked) // Might need to be previousSibling.
-    {
-    enabledTaskCount--;
-    }
-
-}
-
-//--Function to add strikethrough styling if checkbox is ticked------------------------------------------------
-function completeTask ()
-{
-  this.parentNode.classList.toggle("completed");
-
-  /*if($('.li.completed').length === $('.ul .div').length)*///------------DIDN'T WORK - CHECKING OFF ONE ITEM TRIGGERED THE ALERT FOR ALL ITEMS COMPLETED
-  if($('.li.completed').length === $(listOfThings).length)//--------------DOESN'T WORK - CHECKING OFF ALL ITEMS FAILS TO TRIGGER THE ALERT OR COUNTDOWN TO 0 TASKS
-  {
-    pendingTasks.innerHTML  = " ";
-    let thingSpan           = document.getElementById('thingSpan');
-    thingSpan.innerHTML     = `<p>` + "nothing" + `</p>`;
-    alert("Congratulations! You have completed all your tasks. Take a well earned break!");
-  }
-}
-
-
-
-
-
-
-//--Function for 'delete all' button---------------------------------------------------------------------------
-function giveUp ()
-{
-  if (listOfThings.length > 0)
-  {
-    //--Code from Stack Overflow
-    listOfThings.splice(0, listOfThings.length);
-    Array.prototype.slice.call(document.getElementsByTagName('li')).forEach(
-      function(item) {
-        item.remove();
-        });
-    //--end code from Stack Overflow
-
-    pendingTasks.innerHTML  = " ";
-    let thingSpan           = document.getElementById('thingSpan');
-    thingSpan.innerHTML     = `<p>` + "nothing" + `</p>`;
-    alert("Congratulations! You have cast aside the capitalist notion that our worth is based on our productivity!\n \nRejoice and embrace the simple joy of being. \n\n🧘");
-  } 
-}
 //--Function for clock-----------------------------------------------------------------------------------------
 //--CODE FROM https://dev.to/ahmadullahnikzad/how-to-create-digital-clock-in-vanilla-js-2172
 setInterval (function ()
