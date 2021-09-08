@@ -80,9 +80,13 @@ background-size:cover;
 color:          white;
 }
 
-.dark-mode.todobox
+.dark-mode .todobox
 {
 background:     rgba(9, 37, 65, 0.7);
+}
+
+.dark-mode button{
+  background: black;
 }
 
 .todobox
@@ -90,7 +94,7 @@ background:     rgba(9, 37, 65, 0.7);
 background:     #727F88;
 max-width:      400px;
 width:          100%;
-padding:        25px;
+padding:        15px;
 border-radius:  5px;
 box-shadow:     0px 10px 15px rgba(0,0,0,0.1);
 font-weight:    600;
@@ -210,6 +214,7 @@ max-height:     168px;
 }
 
 #inputBox{
+margin-top:     5px;
 width:          85%;
 border:         none;
 border-radius:  5px;
