@@ -1,10 +1,10 @@
 # Focus Pod Productivity Dashboard
 
-![examples of the project site shown on different sized screens](assets/img/)
+![examples of the project site shown on different sized screens](assets/img/responsiveexample.JPG)
 
 This is a website to provide users with a number of useful productivity tools on one page. 
 
-It is a mobile first, responsive design and the live website can be viewed [here](https).
+It is a mobile first, responsive design and the live website can be viewed [here](https://megan-grug.github.io/focus-pod/).
 
 An example of how the homepage looks on various screensizes is included above.
 
@@ -63,8 +63,11 @@ The site will be used by anyone who is looking for a system to support their pro
 | Pomodoro timer                        |     4       |     4       |
 | Gratitude list                        |     3       |     3       |
 | Focus mode with a website blocker     |     3       |     1       |
+| Local Storage                         |     1       |     2       |
                
-After my initial research, I have decided not to attempt to include a 'focus mode' with a website blocker in this project as it is far beyond the scope of my knowledge and I have not been able to find a way of doing this which is built in a web page only. 
+After my initial research, I have decided not to attempt to include a 'focus mode' with a website blocker in this project as it is far beyond the scope of my knowledge and I have not been able to find a way of doing this which is built in a web page only.
+
+I considered adding local storage so that users could keep the same to do list every time they visit the site, however I decided not to do this for a couple of reasons. The site is designed as a companion to use alongside working - not as a full to do app. I wanted the site to show up 'clear' each time it is loaded so that users can consider what they actually need to do at that time, rather than being confronted with a list of tasks from another time which they may not have completed which would start off the users experience in a negative way. 
 
 ## SCOPE PLANE:
 
@@ -103,25 +106,15 @@ Before starting to code the website I prepared wireframes showing the planned pa
 The navigation structure I chose to pursue was based on simplicity to help the users feel comfortable on the website straight away and customisation so that the user can tailor the site to their own needs without any fuss. 
 
 
-Changes since planning stage: 
-- One small change I made to the icons used was to omit the use of the Spotify icon in the final project, whereas it was included in the initial wireframes. The reason for this is that on further discussion with the band as the project progressed I became aware that not all of their music is currently available on Spotify as it is in the process of being re-mastered. For that reason, I decided to use Bandcamp as the music source as it has the full collection available. As the site includes individual album pages where users can stream or link to buy the music, I decided to not also add a separate icon to link to Bandcamp because I felt that this risked taking the user away from our site without adding much value.
-
-[Link to Wireframes](https://github.com/megan-grug/focus-pod/blob/master/wireframes/wireframes.pdf)
-
-
-
-
-**Changes since planning stage:**
-
 
 
 ## SURFACE PLANE
 
 **Colour scheme:**
-- I chose a muted colour scheme for most of the page components in keeping with the 'nature' theme in place, but selected brighter colours and used icons with thick black line borders to represent the features in order to draw attention to them. 
+- I chose a muted colour scheme for most of the page components in keeping with the 'nature' theme in place, but selected brighter colours for the feature icons and used icons with thick black line borders to represent the features in order to draw attention to them. 
 
 **Typography:**
-- For this project I have chosen plain, professional fonts for the main body of the site to keep the pages visually calming and avoid distractions. I used a heavier font for the descriptions in the icons leading to the features so as to make it very clear what they do. 
+- For this project I have chosen plain, professional fonts for the main body of the site to keep the pages visually calming and avoid distractions. I used a heavier font (Urbanist) for the descriptions in the icons leading to the features so as to make it very clear what they do. I chose a more classical font for the quote section to encourage users to take their time to consider the quote.
 
 **Themes:**
 - I have included a subtle nature theme by using background images from nature, and referencing nature in the main icons (rain cloud, moon, sun, and tomato). This is echoed by including the rain sounds feature. The logic behind this is that nature is well documented to be calming and subtle nods and exposures to it can help users to feel more relaxed, making it easier for them to focus. 
@@ -143,7 +136,7 @@ Used for consistent styling and responsiveness.
 Used to provide neat interactivity, for example the 'slide down' of the features. 
 
 -	**Google Fonts:**
-Used to import custom fonts IM Fell English SC and Special Elite as referred to above. 
+Used to import custom fonts Mate SC and Atkinson Hyperlegible as referred to above. 
 
 -	**Font Awesome:**
 Used to import icons used to create custom buttons, such as the delete button for the to do list.
@@ -166,14 +159,22 @@ Used to inspect each page and function of the site and to check each element and
 ## TESTING:
 
 ### VALIDATOR SERVICES:
-- **W3C Markup Validator:**
-       
+- **W3C HTML Validator:**
+    
+    The code passes through the W3C Validator without raising any errors. 
 
 - **W3C CSS Validator:**
     
+    The code passes through the W3C CSS Validator without raising any errors. 
 
 - **Lighthouse:**
-    
+    The site returns passing scores on all counts when passed through Lighthouse for both desktop and mobile. 
+
+    *Desktop:*
+    ![image of desktop Lighthouse results](/assets/img/lighthouseresult_desktop.JPG)
+
+    *Mobile:*
+    ![image of mobile Lighthouse results](/assets/img/lighthouseresult_mobile.JPG)
 
 
 ### MANUAL TESTING
@@ -195,14 +196,94 @@ Manual testing was undertaken on the following browsers with no noticable differ
 
 **Bugs Identified in Manual Testing**
 
+- The moon and sun icons were not originally displaying due to issues with the file paths. 
 
+    I fixed this by correcting the file paths. 
+
+
+- Accessibility issue: 
+    
+    The supplemental text arching around the feature icons (tomato, hearts, moon/sun and rain cloud) are black, and cannot be clearly seen on a dark background. As this descriptive text is supplemental and the elements themselves are fully accessibly labelled in the code, I have not changed this at this time due to time constraints. The about page should be sufficient for any sighted user who isn't clear on what the function of the icons is. If I had further time, I would use a function similar to my 'dark-mode' function to change these icons to versions with white text when viewed against a dark background. 
+
+- Pending taks counter does not count back up if you untick a to do list task:
+    This is an issue with my code, and I haven't been able to fix it yet but I have left the feature in as all other elements of it work (counting up when tasks are added, counting down when they are deleted or checked off).
+
+- Google Chrome Dev Tools produced the following console issues:
+
+    - DevTools failed to load source map: Could not load content for https://open.scdn.co/cdn/build/embed/embed.275f557d.js.map: HTTP error: status code 404, net::ERR_HTTP_RESPONSE_CODE_FAILURE
+
+    - DevTools failed to load source map: Could not load content for https://open.scdn.co/cdn/build/embed/vendor~embed.0819dcac.js.map: HTTP error: status code 404, net::ERR_HTTP_RESPONSE_CODE_FAILURE
+
+    My research shows that these issues are connected to the embedded Spotify player and are based on an issue at Spotify's end which can only be ressolved at Spotify and not on my end. As the page and Spotify function are both loading and operating as expected with no problems, I have left them in and taken no further action. 
+
+    - 8 Error messages of "Indicate whether to send a cookie in a cross-site request by specifying its SameSite attribute. 
+
+    My research shows that these issues are connected to the embedded Spotify player and are based on an issue at Spotify's end which can only be ressolved at Spotify and not on my end. As the page and Spotify function are both loading and operating as expected with no problems, I have left them in and taken no further action. 
 
 
 ### USER STORIES TESTING:
 
+### Students (User A):
+
+- Create and keep track of a to do list;
+- Stay focused on the tasks at hand;
+- Keep track of time;
+- More likely to be working from a variety of places: classrooms, library, at home, and therefore likely to benefit from the ability to access the site on a mobile device. 
+- Users of the site are likely to be very busy individuals and therefore it is important that the site is user friendly and intuitive and that it isn't going to take a long time to understand how it works. 
+
+### Professionals (User B)
+**Goals:**
+- Create and keep track of a to do list;
+
+    The prominent positioning of the to do list on the page works with this user goal. As shown in the screenshot below, the to do list, unlike the other features is expanded by default due to its importance. 
+
+    ![screenshot showing the to do list displayed on mobile](/assets/img/mobileexample.jpg)
 
 
-**FUTURE PLANS**
+- Stay focused on the tasks at hand;
+
+    The minimal nature of the page supports this, as does the users ability to expand and contract various features depending on whether they are in use. This, along with the minimal design minimises distractions. Features such as the rain sounds player can also assist with staying focused as white noise is conducive to focusing. 
+
+- Keep track of time;
+
+    As with the to do list, the clock is kept as a prominent and 'always on' feature unlike some of the other optional or occasional features which are hidden by default. The screenshot above shows this.
+
+- More likely to be working from a variety of places: classrooms, library, at home, and therefore likely to benefit from the ability to access the site on a mobile device. 
+
+    The site has been designed to be mobile-first and fully responsive to support this user goal, and the screenshot above shows that this goal has been met. 
+
+- Users of the site are likely to be very busy individuals and therefore it is important that the site is user friendly and intuitive and that it isn't going to take a long time to understand how it works. 
+
+    The main strategy for meeting this user goal was to keep the site simple and intuitive. I have not included excessive functionality or buttons, and have made it clear what all the buttons do. In addition to this, adding the 'About' page provides additional support for any users who may need it so that they don't need to navigate away from the site to check how to use a feature.
+
+
+### Professionals (User B)
+**Goals:**
+- Create and keep track of a to do list;
+
+    See above.
+
+- Stay focused on the tasks at hand;
+
+    See above.
+
+- Keep track of time;
+
+    See above.
+
+
+- If working in the office around colleagues it is important that the site is clearly work based. 
+
+    The screenshot below of the site as viewed on a laptop shows the to do list always prominently displayed in the centre of the screen. This helps it to always be clear that this is a work/productivity related site. 
+
+![screenshot of the site as viewed on a laptop](/assets/img/laptop_example.JPG)
+
+
+- More likely to be working from a desktop or laptop computer alongside other windows and likely to benefit from being able to resize the browser window to fit in alongside other work. 
+
+    The screenshow below of the site if being viewed with other browser windows in place shows that the site works well when resized and that the content is clear and the layout practical even when viewed at a smaller size or different shape. 
+
+![screenshot of the site as viewed alongside other browser windows](/assets/img/laptop_example.JPG)
 
 
 
@@ -264,7 +345,10 @@ This will allow you to make changes to the project without affecting the origina
 ## CREDITS
 
 ### Code Credits
+Code to remove a specific item from an array for the 'giveUp' function called by the Delete All button is from user Lioness100 at [Stack Overflow page](https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array).
 
+
+Code for the clock function is from user ahmadulla at [Dev To](https://dev.to/ahmadullahnikzad/how-to-create-digital-clock-in-vanilla-js-2172). 
 
 ### Media Credits
 

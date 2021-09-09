@@ -62,7 +62,7 @@ function addNew ()
     }
     else if (inputBox.value == nullstr) 
     { 
-    alert("You don't appear to have typed in a task, you cannot add an empty item to your list."); //ONLY WORKING ON SECOND TRY (ALLOWS USER TO INPUT ONE EMPTY ITEM)
+    alert("You don't appear to have typed in a task, you cannot add an empty item to your list."); 
     }
   } 
 
@@ -78,39 +78,14 @@ function deleteTask (evt)
   else if  (listOfThings.length === 1) { updateTaskCounter("thing");    }
   else if  (listOfThings        <   1) { updateTaskCounter("nothing");  }
 
-  if (!evt.currentTarget.adjacentSibling.checked) // Might need to be previousSibling.
+  if (!evt.currentTarget.adjacentSibling.checked) 
     {
     enabledTaskCount--;
     }
 
 }
 
-/*function checkBoxTicked() // this version keeps incrementing the pendingtaskcount any time you check or uncheck the checkbox
-{
-  if (this.checked)
-  { 
-    this.parentNode.classList.add("completed");
-    enabledTaskCount--;
-   
-    if       (enabledTaskCount >   1) { updateTaskCounter("things");   }
-    else if  (enabledTaskCount === 1) { updateTaskCounter("thing");    }
-    else if  (enabledTaskCount <   1) { updateTaskCounter("nothing");  }
 
-  }
-
-  else if (!this.checked)
-  {
-    this.parentNode.classList.remove("completed");
-    enabledTaskCount++;
-   
-    if       (enabledTaskCount >   1) { updateTaskCounter("things");   }
-    else if  (enabledTaskCount === 1) { updateTaskCounter("thing");    }
-    else if  (enabledTaskCount <   1) { updateTaskCounter("nothing");  }
-  }
-
-}
-
-*/
 function checkBoxTicked ()
 {
   this.parentNode.classList.add("completed");
@@ -144,7 +119,7 @@ function giveUp ()
 {
   if (listOfThings.length > 0)
   {
-    //--Code from Stack Overflow
+    //--Code from Stack Overflow at https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array
     listOfThings.splice(0, listOfThings.length);
     Array.prototype.slice.call(document.getElementsByTagName('li')).forEach(
       function(item) {
@@ -327,9 +302,7 @@ function secondsCountdown ()
 
   else if (seconds_remaining == 0 && minutes_remaining == 0)              //if BOTH seconds and minutes are 0 - i.e. countdown has finished
     {                                                                               
-    timerBox.classList.remove("pom_class");                               //remove red styling from pom_timer box
-    timerBox.classList.add("break");                                      //add green styling to pom_timer box
-    
+
     alert("Time to take a break!");
     resetTimer(); 
 
