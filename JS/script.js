@@ -162,13 +162,9 @@ function giveUp ()
 
 //--darkMode function to change page styling to dark version and toggle moon and sun icons---------------------
 function darkMode () 
-{
-  let quotes            = document.getElementById("quotes");              //get reference to quotes section
-  
+{ 
   document.body.classList.toggle  ("dark-mode");                          //toggles 'dark-mode' class on and off to toggle styling between default and dark mode
-  quotes.classList.remove         ("quotes_class");                       //removes default styling for quote section
-  quotes.classList.add            ("dark_quotes");                        //adds 'dark' styling for quote section
-  
+ 
   if   (document.getElementById("satellite").classList.contains("moon")) //swaps between moon and sun images
 
        document.getElementById("satellite").className = "sun superbutton";
