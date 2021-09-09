@@ -17,16 +17,17 @@ background:     url(../img/dayforest.jpg) no-repeat center center fixed;
 background-size:cover;
 }
 
-footer{
-  padding-top: 20px;
-  padding-bottom: 20px;
-  text-align: center;
-  color: white;
-  font-weight: 400;
+footer
+{
+padding-top:    20px;
+text-align:     center;
+color:          white;
+font-weight:    400;
 }
 
-footer a{
-  color:white;
+footer a
+{
+  color:        white;
 }
 
 
@@ -40,11 +41,13 @@ padding:        0;
 font-weight:    800;
 }
 
-h1{
+h1
+{
   text-align: center;
 }
 
-td{
+td
+{
   padding-right: 20px;
 }
 
@@ -70,7 +73,8 @@ opacity:        0.6;
 float:          right;
 }
 
-i{
+i
+{
 margin:         7px;
 }
 
@@ -109,6 +113,14 @@ background:     rgba(9, 37, 65, 0.7);
 .dark-mode button{
   background:   black;
 }
+
+.dark-mode .quotes
+{
+background:     rgba(0, 0, 0, 0.685);
+border-radius:  5px;
+font-weight:    800;
+}
+
 
 .todobox
 {
@@ -212,13 +224,6 @@ background:     #e4dee2af;
 color:          black
 }
 
-.dark_quotes
-{
-background:     rgba(0, 0, 0, 0.685);
-border-radius:  5px;
-font-weight:    800;
-}
-
 .gratitude_item
 {
 border:         none;
@@ -230,14 +235,14 @@ width:          80%;
 }
 
 .moon{
-content:        url(../img/finalmoon.png);
+content:        url(finalmoon.PNG);
 margin-top:     90%;
 max-width:      250px;
 max-height:     250px;
 }
 
 .sun{
-content:        url(../img/finalsun.png);
+content:        url(finalsun.PNG));
 margin-top:     90%;
 max-width:      250px;
 max-height:     250px;
@@ -410,7 +415,7 @@ max-height:     250px;
   
   .moon
   {
-  content:      url(../img/finalmoon.png);
+  content:      url(finalmoon.PNG);
   margin-top:   10%;
   margin-left:  auto;
   margin-right: auto;
@@ -418,7 +423,7 @@ max-height:     250px;
   
   .sun
   {
-  content:      url(../img/finalsun.png);
+  content:      url(finalsun.PNG);
   margin-top:   10%;
   margin-left:  25%;
   }
@@ -462,7 +467,7 @@ max-height:     250px;
   }
 
   .moon{
-  content:      url(../img/finalmoon.png);
+  content:      url(finalmoon.PNG);
   margin-top:   10%;
   text-align:   left;
   max-width:    168px;
@@ -470,7 +475,7 @@ max-height:     250px;
   }
   
   .sun{
-  content:      url(../img/sun.png);
+  content:      url(finalsun.PNG);
   margin-top:   10%;
   max-width:    168px;
   max-height:   168px;
