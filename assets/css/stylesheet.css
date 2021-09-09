@@ -147,6 +147,11 @@ font-style:     italic;
 color:          black;
 }
 
+.credits_list
+{
+  text-decoration: underline;
+}
+
 .break
 {
 background:     rgba(45, 77, 45, 0.527);
