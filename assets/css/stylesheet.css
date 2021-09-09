@@ -234,15 +234,17 @@ border-radius:  5px;
 width:          80%;
 }
 
-.moon{
+.moon
+{
 content:        url(finalmoon.PNG);
 margin-top:     90%;
 max-width:      250px;
 max-height:     250px;
 }
 
-.sun{
-content:        url(finalsun.PNG));
+.sun
+{
+content:        url(finalsun.PNG);
 margin-top:     90%;
 max-width:      250px;
 max-height:     250px;
@@ -403,11 +405,6 @@ max-height:     250px;
   text-align:   center;
   }
 
-  #satellite
-  {
-  text-align:   center;
-  }
-
   #raincloud
   {
   margin-top:   10%;
@@ -415,7 +412,6 @@ max-height:     250px;
   
   .moon
   {
-  content:      url(finalmoon.PNG);
   margin-top:   10%;
   margin-left:  auto;
   margin-right: auto;
@@ -423,7 +419,6 @@ max-height:     250px;
   
   .sun
   {
-  content:      url(finalsun.PNG);
   margin-top:   10%;
   margin-left:  25%;
   }
@@ -467,7 +462,6 @@ max-height:     250px;
   }
 
   .moon{
-  content:      url(finalmoon.PNG);
   margin-top:   10%;
   text-align:   left;
   max-width:    168px;
@@ -475,7 +469,6 @@ max-height:     250px;
   }
   
   .sun{
-  content:      url(finalsun.PNG);
   margin-top:   10%;
   max-width:    168px;
   max-height:   168px;
