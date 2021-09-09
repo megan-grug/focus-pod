@@ -236,7 +236,7 @@ width:          80%;
 
 .moon
 {
-content:        url(finalmoon.PNG);
+content:        url(/finalmoon.PNG);
 margin-top:     90%;
 max-width:      250px;
 max-height:     250px;
@@ -244,7 +244,7 @@ max-height:     250px;
 
 .sun
 {
-content:        url(finalsun.PNG);
+content:        url(/finalsun.PNG);
 margin-top:     90%;
 max-width:      250px;
 max-height:     250px;
