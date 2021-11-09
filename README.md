@@ -214,11 +214,11 @@ Manual testing was undertaken on the following browsers with no noticable differ
 
     - DevTools failed to load source map: Could not load content for https://open.scdn.co/cdn/build/embed/vendor~embed.0819dcac.js.map: HTTP error: status code 404, net::ERR_HTTP_RESPONSE_CODE_FAILURE
 
-    My research shows that these issues are connected to the embedded Spotify player and are based on an issue at Spotify's end which can only be ressolved at Spotify and not on my end. As the page and Spotify function are both loading and operating as expected with no problems, I have left them in and taken no further action. 
+    My research shows that these issues are connected to the embedded Spotify player and are based on an issue at Spotify's end which can only be resolved at Spotify and not on my end. As the page and Spotify function are both loading and operating as expected with no problems, I have left them in and taken no further action. 
 
     - 8 Error messages of "Indicate whether to send a cookie in a cross-site request by specifying its SameSite attribute. 
 
-    My research shows that these issues are connected to the embedded Spotify player and are based on an issue at Spotify's end which can only be ressolved at Spotify and not on my end. As the page and Spotify function are both loading and operating as expected with no problems, I have left them in and taken no further action. 
+    My research shows that these issues are connected to the embedded Spotify player and are based on an issue at Spotify's end which can only be resolved at Spotify and not on my end. As the page and Spotify function are both loading and operating as expected with no problems, I have left them in and taken no further action. 
 
 
 ### USER STORIES TESTING:
@@ -345,12 +345,16 @@ This will allow you to make changes to the project without affecting the origina
 ## CREDITS
 
 ### Code Credits
+
+Code for the flipclock is from OBJECTIVEHTML at [GitHub](https://github.com/objectivehtml/FlipClock) Copyright (c) 2013 Objective HTML, LCC shared under MIT LICENSE.
+
 Code to remove a specific item from an array for the 'giveUp' function called by the Delete All button is from user Lioness100 at [Stack Overflow page](https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array).
 
 
 Code for the clock function is from user ahmadulla at [Dev To](https://dev.to/ahmadullahnikzad/how-to-create-digital-clock-in-vanilla-js-2172). 
 
 ### Media Credits
+
 
 **Favicon:**    
 The emoji graphic 'Hourglass Not Done' is from the open source project Twemoji. The graphics are copyright 2020 Twitter, Inc and other contributors. The graphics are licensed under CC-BY 4.0.
